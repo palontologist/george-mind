@@ -1,0 +1,174 @@
+{
+  "subject": "George Karani",
+  "coordinates": ["Nairobi", "San Francisco", "New York"],
+  "tagline": "Physical AI • Embodied Intelligence • Autonomous Systems",
+  "lobes": [
+    {
+      "id": "motor-cortex",
+      "name": "Physical AI & Embodied Reflexes",
+      "tag": "MOTOR_CORTEX",
+      "color": "#f97316",
+      "position": [0, 2.5, 0.5],
+      "description": "Exploration of reflexive, low-latency intelligence. Moving beyond slow autoregressive text tokens toward motor memory and contact physics.",
+      "nodes": [
+        {
+          "title": "Muscle Memory (UniBot-V1)",
+          "subtitle": "Looped-Transformer Instinct Layer",
+          "metrics": "17/32 Tasks Solved • Zero-Slip Contact Verification",
+          "repo": "https://github.com/palontologist/unibot-muscle-memory",
+          "content": "Multi-task behavioral cloning policy utilizing a recurrent looped-transformer architecture for sub-10ms reactive manipulation and contact-verified grasping."
+        },
+        {
+          "title": "Fast & Curious",
+          "subtitle": "JSAE Autonomous Driving AI Challenge",
+          "metrics": "43s Target Pace • Vehicle-Specific MPC",
+          "repo": "https://github.com/palontologist/FastAndCurious",
+          "content": "Model Predictive Control (MPC) tracking modules, ROS 2 sensor fusion (IMU/GNSS/LiDAR), and autonomous stuck-recovery supervisor for high-speed racing karts."
+        }
+      ]
+    },
+    {
+      "id": "silicon-edge",
+      "name": "Silicon & Low-Level Edge",
+      "tag": "COMPUTE_CORE",
+      "color": "#06b6d4",
+      "position": [-2.2, 0.8, -0.4],
+      "description": "Hardware-software co-design, custom processor microarchitecture, and on-device offline inference.",
+      "nodes": [
+        {
+          "title": "Hades-V",
+          "subtitle": "32-bit Pipelined RISC-V Processor",
+          "metrics": "SystemVerilog • Custom Instruction Pipeline",
+          "content": "From-scratch pipelined RISC-V processor implementing architectural hazard handling, forwarding units, and low-level execution efficiency."
+        },
+        {
+          "title": "Mobile Edge Assistant (MEA)",
+          "subtitle": "On-Device Micro-Agents",
+          "metrics": "FunctionGemma 270M–1B • whisper.cpp • Zero Egress",
+          "repo": "https://github.com/palontologist/mobile-1b-agent",
+          "content": "Sub-3B micro-LLMs executing deterministic tool calling entirely on-device on commodity smartphones."
+        },
+        {
+          "title": "Greta Productivity Engine",
+          "subtitle": "Native Linux Daemon & Local Analytics",
+          "metrics": "Rust • Linux/Hyprland • SQLite • Tauri 2.0",
+          "repo": "https://github.com/palontologist/greta-productivity-agent",
+          "content": "Native Rust engine tracking xprop window states and telemetry with zero cloud dependency."
+        }
+      ]
+    },
+    {
+      "id": "ecosystem",
+      "name": "Ecosystem & Builder Salons",
+      "tag": "FRONTAL_BROCA",
+      "color": "#eab308",
+      "position": [2.2, 0.8, -0.4],
+      "description": "Connecting frontier builders, running hacker salons in SF/NYC/NBO, and fostering African tech infrastructure.",
+      "nodes": [
+        {
+          "title": "Physical AI & Wearable Builder Salons",
+          "subtitle": "San Francisco & New York (Corgi)",
+          "metrics": "Curated Hacker Salons • Hardware Demos",
+          "content": "Gatherings bringing together robotics researchers, wearable pioneers (Omi, Rabbit), and AI agent architects."
+        },
+        {
+          "title": "Startup Grind & CMX Nairobi",
+          "subtitle": "Chapter Leadership & Builder Programs",
+          "metrics": "1,000+ Builders • ClawCamp Hackathons",
+          "content": "Ecosystem leadership designing high-engagement technical bootcamps, pitch cohorts, and institutional partner bridges (Zoho, ETHGlobal)."
+        },
+        {
+          "title": "FrontforumFocus Podcast",
+          "subtitle": "40+ Episodes on Frontier Tech",
+          "metrics": "Global South Builders • Deep Tech",
+          "content": "In-depth conversations with founders across robotics, renewable MRV, and AI infrastructure."
+        }
+      ]
+    },
+    {
+      "id": "movement",
+      "name": "Movement, Sports & Endurance",
+      "tag": "SOMATOSENSORY",
+      "color": "#ef4444",
+      "position": [0, -1.8, 1.2],
+      "description": "High-altitude running, physical stamina, and the discipline of endurance sprints.",
+      "nodes": [
+        {
+          "title": "Kenyan Endurance & High-Altitude Pacing",
+          "subtitle": "The Philosophy of the Long Grind",
+          "content": "Running at 2,000m+ elevation. Physical training as the calibration baseline for mental resilience during intense multi-month engineering cycles."
+        },
+        {
+          "title": "Racing Dynamics & Trajectory Lines",
+          "subtitle": "Apex Control & Physical Limits",
+          "content": "Understanding real-world friction, tire grip limits, and the visceral feel of vehicle dynamics translates directly into tuning MPC controllers."
+        }
+      ]
+    },
+    {
+      "id": "transits",
+      "name": "Global Transits & Constellations",
+      "tag": "SPATIAL_LOCI",
+      "color": "#a855f7",
+      "position": [-1.5, -1.2, -1.5],
+      "description": "The triangle of nodes shaping the work: Nairobi, San Francisco, and New York.",
+      "nodes": [
+        {
+          "title": "Nairobi, Kenya",
+          "subtitle": "Home Base & Frontier Proving Grounds",
+          "content": "Hardware prototyping, local developer talent, and extreme-terrain telemetry testing."
+        },
+        {
+          "title": "San Francisco & Bay Area",
+          "subtitle": "Frontier AI & Robotics Research",
+          "content": "Physical AI salons, compute networks, and frontier model discussions."
+        },
+        {
+          "title": "New York City",
+          "subtitle": "Design, Wearables & Embodied AI",
+          "content": "Omi residency, builder collisions, and ambient interface design."
+        }
+      ]
+    },
+    {
+      "id": "monologues",
+      "name": "Inner Monologues & Field Notes",
+      "tag": "DEFAULT_MODE_NETWORK",
+      "color": "#ec4899",
+      "position": [1.5, -1.2, -1.5],
+      "description": "Essays, technical reflections, and raw builder philosophy.",
+      "nodes": [
+        {
+          "title": "Why Embodied AI Needs an Instinct Layer",
+          "subtitle": "Essay • Oct 2026",
+          "content": "Autoregressive generation is fundamentally too slow for closed-loop balance and grip slip prevention. Why we need looped transformers for fast motor reflexes."
+        },
+        {
+          "title": "Telemetry Over Speculation",
+          "subtitle": "Field Note • Sep 2026",
+          "content": "Real-world MRV for renewable energy and edge systems requires immutable telemetry from physical sensors, not self-reported estimations."
+        },
+        {
+          "title": "Taste as an Engineering Moat",
+          "subtitle": "Essay • Aug 2026",
+          "content": "When code generation approaches zero marginal cost, the differentiator is architectural taste, physical constraints, and problem selection."
+        }
+      ]
+    },
+    {
+      "id": "tribe",
+      "name": "The Tribe & Co-conspirators",
+      "tag": "SOCIAL_CONNECTOME",
+      "color": "#10b981",
+      "position": [0, 0, -2.2],
+      "description": "Collaborators, mentors, and fellow builders across the journey.",
+      "nodes": [
+        {
+          "title": "Frontier Collaborators",
+          "subtitle": "Omi, Startup Grind, Hardware Labs",
+          "content": "Partnering with teams across Omi, NVIDIA, Corgi, and African hacker hubs to turn early research into deployed prototypes."
+        }
+      ]
+    }
+  ]
+}
