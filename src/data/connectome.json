@@ -2,6 +2,7 @@
   "subject": "George Karani",
   "coordinates": ["Nairobi", "San Francisco", "New York"],
   "tagline": "Physical AI • Embodied Intelligence • Autonomous Systems",
+  "podcastUrl": "https://youtube.com/@frontforumfocus",
   "lobes": [
     {
       "id": "motor-cortex",
@@ -58,6 +59,29 @@
       ]
     },
     {
+      "id": "podcast-dialogues",
+      "name": "frontforumfocus Podcast",
+      "tag": "BROADCAST_FEED",
+      "color": "#ec4899",
+      "position": [1.5, -1.2, -1.5],
+      "description": "Long-form dialogues and deep dives with founders, researchers, and builders on YouTube.",
+      "nodes": [
+        {
+          "title": "frontforumfocus Podcast",
+          "subtitle": "40+ Episodes • YouTube",
+          "metrics": "youtube.com/@frontforumfocus",
+          "repo": "https://youtube.com/@frontforumfocus",
+          "content": "Hosting 40+ conversations exploring the frontiers of robotics, embodied intelligence, climate tech telemetry, open hardware, and African builder ecosystems."
+        },
+        {
+          "title": "Featured Conversations",
+          "subtitle": "Robotics, RISC-V & Physical AI",
+          "repo": "https://youtube.com/@frontforumfocus",
+          "content": "Deep technical breakdowns with operators building real physical infrastructure and AI systems."
+        }
+      ]
+    },
+    {
       "id": "ecosystem",
       "name": "Ecosystem & Builder Salons",
       "tag": "FRONTAL_BROCA",
@@ -76,12 +100,6 @@
           "subtitle": "Chapter Leadership & Builder Programs",
           "metrics": "1,000+ Builders • ClawCamp Hackathons",
           "content": "Ecosystem leadership designing high-engagement technical bootcamps, pitch cohorts, and institutional partner bridges (Zoho, ETHGlobal)."
-        },
-        {
-          "title": "FrontforumFocus Podcast",
-          "subtitle": "40+ Episodes on Frontier Tech",
-          "metrics": "Global South Builders • Deep Tech",
-          "content": "In-depth conversations with founders across robotics, renewable MRV, and AI infrastructure."
         }
       ]
     },
@@ -127,31 +145,6 @@
           "title": "New York City",
           "subtitle": "Design, Wearables & Embodied AI",
           "content": "Omi residency, builder collisions, and ambient interface design."
-        }
-      ]
-    },
-    {
-      "id": "monologues",
-      "name": "Inner Monologues & Field Notes",
-      "tag": "DEFAULT_MODE_NETWORK",
-      "color": "#ec4899",
-      "position": [1.5, -1.2, -1.5],
-      "description": "Essays, technical reflections, and raw builder philosophy.",
-      "nodes": [
-        {
-          "title": "Why Embodied AI Needs an Instinct Layer",
-          "subtitle": "Essay • Oct 2026",
-          "content": "Autoregressive generation is fundamentally too slow for closed-loop balance and grip slip prevention. Why we need looped transformers for fast motor reflexes."
-        },
-        {
-          "title": "Telemetry Over Speculation",
-          "subtitle": "Field Note • Sep 2026",
-          "content": "Real-world MRV for renewable energy and edge systems requires immutable telemetry from physical sensors, not self-reported estimations."
-        },
-        {
-          "title": "Taste as an Engineering Moat",
-          "subtitle": "Essay • Aug 2026",
-          "content": "When code generation approaches zero marginal cost, the differentiator is architectural taste, physical constraints, and problem selection."
         }
       ]
     },
