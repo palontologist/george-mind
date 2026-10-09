@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import ConnectomeScene, { Lobe } from "../components/ConnectomeScene";
+import dynamic from "next/dynamic";
+import type { Lobe } from "../components/ConnectomeScene";
+
+const ConnectomeScene = dynamic(() => import("../components/ConnectomeScene"), {
+  ssr: false,
+});
 import PersonaAvatar, { MoodData } from "../components/PersonaAvatar";
 import connectomeData from "../data/connectome.json";
 import { Sparkles, Terminal, X, ExternalLink, Globe, ArrowUpRight, Compass, Brain, Youtube } from "lucide-react";
@@ -121,9 +126,9 @@ export default function Home() {
                           <h3 className="text-sm font-medium text-zinc-100">{node.title}</h3>
                           <p className="text-xs text-zinc-400">{node.subtitle}</p>
                         </div>
-                        {node.repo && (
+                        {(node as any).repo && (
                           <a
-                            href={node.repo}
+                            href={(node as any).repo}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-xs text-sky-400 hover:underline flex items-center space-x-1"
@@ -133,9 +138,9 @@ export default function Home() {
                           </a>
                         )}
                       </div>
-                      {node.metrics && (
+                      {(node as any).metrics && (
                         <div className="text-[11px] font-mono text-amber-400/90 bg-amber-400/10 px-2 py-0.5 rounded w-fit">
-                          {node.metrics}
+                          {(node as any).metrics}
                         </div>
                       )}
                       <p className="text-xs text-zinc-400 leading-relaxed">{node.content}</p>
@@ -204,9 +209,9 @@ export default function Home() {
                     )}
                   </div>
 
-                  {node.metrics && (
+                  {(node as any).metrics && (
                     <div className="text-[10px] font-mono text-sky-400 bg-sky-950/40 border border-sky-800/40 px-2 py-0.5 rounded w-fit">
-                      {node.metrics}
+                      {(node as any).metrics}
                     </div>
                   )}
 

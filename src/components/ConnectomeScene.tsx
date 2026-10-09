@@ -180,7 +180,7 @@ export default function ConnectomeScene({
         {connectomeData.lobes.map((lobe) => (
           <LobeNode
             key={lobe.id}
-            lobe={lobe as Lobe}
+            lobe={lobe as unknown as Lobe}
             onSelect={onSelectLobe}
             isActive={activeLobeId === lobe.id}
           />
