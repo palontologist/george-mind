@@ -10,6 +10,12 @@
       "tag": "MOTOR_CORTEX",
       "color": "#f97316",
       "position": [0, 2.5, 0.5],
+      "mood": {
+        "emotion": "Laser Focus & Flow State",
+        "expression": "Locked in, analyzing telemetry waveforms and contact slip forces",
+        "aura": "Amber Pulse • 120 BPM",
+        "thought": "Autoregression is too slow for physics. If you can't react in 10ms, you slip."
+      },
       "description": "Exploration of reflexive, low-latency intelligence. Moving beyond slow autoregressive text tokens toward motor memory and contact physics.",
       "nodes": [
         {
@@ -34,6 +40,12 @@
       "tag": "COMPUTE_CORE",
       "color": "#06b6d4",
       "position": [-2.2, 0.8, -0.4],
+      "mood": {
+        "emotion": "Deep Contemplation & Debugging",
+        "expression": "Chin rested on hand, dissecting timing hazards and pipeline stalls",
+        "aura": "Electric Cyan • Cold Glow",
+        "thought": "When the compiler gives up, you have to go down to the silicon gates."
+      },
       "description": "Hardware-software co-design, custom processor microarchitecture, and on-device offline inference.",
       "nodes": [
         {
@@ -64,6 +76,12 @@
       "tag": "BROADCAST_FEED",
       "color": "#ec4899",
       "position": [1.5, -1.2, -1.5],
+      "mood": {
+        "emotion": "Radiant Smile & Shared Discovery",
+        "expression": "Mid-laugh with a guest, uncovering an unexpected technical intuition",
+        "aura": "Warm Magenta • Vibrant Resonance",
+        "thought": "The best technical insights come out when two builders drop their guard."
+      },
       "description": "Long-form dialogues and deep dives with founders, researchers, and builders on YouTube.",
       "nodes": [
         {
@@ -87,6 +105,12 @@
       "tag": "FRONTAL_BROCA",
       "color": "#eab308",
       "position": [2.2, 0.8, -0.4],
+      "mood": {
+        "emotion": "Electric Energy & Room Presence",
+        "expression": "High energy, commanding the stage at ClawCamp and Corgi Salons",
+        "aura": "Solar Gold • High Voltage",
+        "thought": "Culture is built by putting high-conviction builders in the same room."
+      },
       "description": "Connecting frontier builders, running hacker salons in SF/NYC/NBO, and fostering African tech infrastructure.",
       "nodes": [
         {
@@ -109,12 +133,18 @@
       "tag": "SOMATOSENSORY",
       "color": "#ef4444",
       "position": [0, -1.8, 1.2],
+      "mood": {
+        "emotion": "Raw Grit & Exhausted Euphoria",
+        "expression": "Sweat on the brow, deep breathing after pushing through the 25th kilometer",
+        "aura": "Crimson Blaze • Heavy Heartbeat",
+        "thought": "Your mind wants to stop at 40%. The legs keep moving regardless."
+      },
       "description": "High-altitude running, physical stamina, and the discipline of endurance sprints.",
       "nodes": [
         {
           "title": "Kenyan Endurance & High-Altitude Pacing",
           "subtitle": "The Philosophy of the Long Grind",
-          "content": "Running at 2,000m+ elevation. Physical training as the calibration baseline for mental resilience during intense multi-month engineering cycles."
+          "content": "Running at 2,000m+ elevation in the Rift Valley. Physical training as the calibration baseline for mental resilience during intense multi-month engineering cycles."
         },
         {
           "title": "Racing Dynamics & Trajectory Lines",
@@ -129,6 +159,12 @@
       "tag": "SPATIAL_LOCI",
       "color": "#a855f7",
       "position": [-1.5, -1.2, -1.5],
+      "mood": {
+        "emotion": "Wanderlust & Jet-Lagged Wonder",
+        "expression": "Staring out the plane window at 35,000 feet, bridging two continents",
+        "aura": "Astral Purple • Soft Drift",
+        "thought": "Between Nairobi, SF, and New York, home is where the workbench is."
+      },
       "description": "The triangle of nodes shaping the work: Nairobi, San Francisco, and New York.",
       "nodes": [
         {
@@ -154,6 +190,12 @@
       "tag": "SOCIAL_CONNECTOME",
       "color": "#10b981",
       "position": [0, 0, -2.2],
+      "mood": {
+        "emotion": "Candid Warmth & Camaraderie",
+        "expression": "Unfiltered laughter with friends, late-night hackathon debriefs",
+        "aura": "Emerald Warmth • Harmonious",
+        "thought": "Everything worthwhile was built with good friends in messy rooms."
+      },
       "description": "Collaborators, mentors, and fellow builders across the journey.",
       "nodes": [
         {
