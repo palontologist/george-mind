@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import ConnectomeScene, { Lobe } from "../components/ConnectomeScene";
 import connectomeData from "../data/connectome.json";
-import { Sparkles, Terminal, X, ExternalLink, Globe, ArrowUpRight, Compass, Brain } from "lucide-react";
+import { Sparkles, Terminal, X, ExternalLink, Globe, ArrowUpRight, Compass, Brain, Youtube } from "lucide-react";
 
 export default function Home() {
   const [selectedLobe, setSelectedLobe] = useState<Lobe | null>(null);
@@ -25,28 +25,40 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mode Switcher */}
-        <div className="flex items-center space-x-2 bg-zinc-900/80 p-1 rounded-lg border border-zinc-800 text-xs font-mono">
-          <button
-            onClick={() => setViewMode("connectome")}
-            className={`px-3 py-1.5 rounded-md transition-all ${
-              viewMode === "connectome"
-                ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
-                : "text-zinc-400 hover:text-zinc-200"
-            }`}
+        {/* Links & Mode Switcher */}
+        <div className="flex items-center space-x-3">
+          <a
+            href={connectomeData.podcastUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-red-950/30 border border-red-800/40 text-red-400 hover:text-red-300 text-xs font-mono transition-colors"
           >
-            3D CONNECTOME
-          </button>
-          <button
-            onClick={() => setViewMode("editorial")}
-            className={`px-3 py-1.5 rounded-md transition-all ${
-              viewMode === "editorial"
-                ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
-                : "text-zinc-400 hover:text-zinc-200"
-            }`}
-          >
-            EDITORIAL VIEW
-          </button>
+            <Youtube className="w-3.5 h-3.5" />
+            <span>@frontforumfocus</span>
+          </a>
+
+          <div className="flex items-center space-x-2 bg-zinc-900/80 p-1 rounded-lg border border-zinc-800 text-xs font-mono">
+            <button
+              onClick={() => setViewMode("connectome")}
+              className={`px-3 py-1.5 rounded-md transition-all ${
+                viewMode === "connectome"
+                  ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
+                  : "text-zinc-400 hover:text-zinc-200"
+              }`}
+            >
+              3D CONNECTOME
+            </button>
+            <button
+              onClick={() => setViewMode("editorial")}
+              className={`px-3 py-1.5 rounded-md transition-all ${
+                viewMode === "editorial"
+                  ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
+                  : "text-zinc-400 hover:text-zinc-200"
+              }`}
+            >
+              EDITORIAL VIEW
+            </button>
+          </div>
         </div>
       </header>
 
@@ -73,7 +85,7 @@ export default function Home() {
             <div className="space-y-3 border-b border-zinc-800 pb-8">
               <h1 className="text-3xl font-serif tracking-tight text-white">George Karani</h1>
               <p className="text-zinc-400 text-sm leading-relaxed max-w-xl">
-                Building physical AI and autonomous agent frameworks—from looped-transformer reflexive policies on robotic manipulators to MPC control loops on racing karts and sub-3B on-device models.
+                Building physical AI and autonomous agent frameworks—from looped-transformer reflexive policies on robotic manipulators to MPC control loops on racing karts and sub-3B on-device models. Host of the <a href={connectomeData.podcastUrl} target="_blank" rel="noopener noreferrer" className="text-red-400 underline hover:text-red-300">frontforumfocus podcast</a> (40+ episodes).
               </p>
             </div>
 
@@ -101,7 +113,7 @@ export default function Home() {
                             rel="noopener noreferrer"
                             className="text-xs text-sky-400 hover:underline flex items-center space-x-1"
                           >
-                            <span>Code</span>
+                            <span>Link</span>
                             <ArrowUpRight className="w-3 h-3" />
                           </a>
                         )}
