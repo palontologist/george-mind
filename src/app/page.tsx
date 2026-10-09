@@ -2,12 +2,18 @@
 
 import React, { useState } from "react";
 import ConnectomeScene, { Lobe } from "../components/ConnectomeScene";
+import PersonaAvatar, { MoodData } from "../components/PersonaAvatar";
 import connectomeData from "../data/connectome.json";
 import { Sparkles, Terminal, X, ExternalLink, Globe, ArrowUpRight, Compass, Brain, Youtube } from "lucide-react";
 
 export default function Home() {
   const [selectedLobe, setSelectedLobe] = useState<Lobe | null>(null);
   const [viewMode, setViewMode] = useState<"connectome" | "editorial">("connectome");
+
+  // Cast lobe mood if available
+  const currentMood: MoodData | undefined = selectedLobe
+    ? (selectedLobe as any).mood
+    : undefined;
 
   return (
     <main className="w-screen h-screen overflow-hidden flex flex-col bg-[#09090b] text-zinc-100 font-sans select-none">
@@ -71,13 +77,14 @@ export default function Home() {
               activeLobeId={selectedLobe?.id || null}
             />
 
-            {/* Hint overlay */}
-            {!selectedLobe && (
-              <div className="absolute bottom-6 left-6 pointer-events-none z-10 flex items-center space-x-2 text-xs font-mono text-zinc-400 bg-zinc-950/70 px-3 py-2 rounded-lg border border-zinc-800/80 backdrop-blur-sm">
-                <Compass className="w-4 h-4 text-sky-400 animate-spin" />
-                <span>Drag to rotate connectome • Click any glowing lobe to inspect thoughts</span>
-              </div>
-            )}
+            {/* Persistent Persona / State Overlay Card at Bottom-Left */}
+            <div className="absolute bottom-6 left-6 z-20 max-w-sm w-full pointer-events-auto">
+              <PersonaAvatar
+                mood={currentMood}
+                color={selectedLobe?.color || "#38bdf8"}
+                compact={!selectedLobe}
+              />
+            </div>
           </>
         ) : (
           /* Editorial View (Anushka Thakur inspired minimalist list) */
@@ -91,10 +98,18 @@ export default function Home() {
 
             {connectomeData.lobes.map((lobe) => (
               <section key={lobe.id} className="space-y-6">
-                <div className="flex items-center space-x-2 border-b border-zinc-800/80 pb-2">
-                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: lobe.color }} />
-                  <h2 className="text-xs font-mono tracking-wider uppercase text-zinc-300">{lobe.name}</h2>
+                <div className="space-y-2 border-b border-zinc-800/80 pb-3">
+                  <div className="flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: lobe.color }} />
+                    <h2 className="text-xs font-mono tracking-wider uppercase text-zinc-300">{lobe.name}</h2>
+                  </div>
+                  {(lobe as any).mood && (
+                    <p className="text-xs text-zinc-400 italic">
+                      "{(lobe as any).mood.thought}"
+                    </p>
+                  )}
                 </div>
+
                 <div className="grid gap-4">
                   {lobe.nodes.map((node, i) => (
                     <div
