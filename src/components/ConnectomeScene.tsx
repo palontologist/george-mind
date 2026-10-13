@@ -38,43 +38,55 @@ function MindFace({ mood, color }: { mood?: ConnectomeSceneProps["mood"]; color:
   const happy = /smile|warmth|radiant|camaraderie|energy|euphoria/.test(emotion);
   const curious = /wonder|curious|contemplation|debugging|wanderlust/.test(emotion);
   const intense = /focus|grit|electric|raw/.test(emotion);
+  const skin = "#b97962";
 
   useFrame((state) => {
     if (faceRef.current) {
-      faceRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.2) * 0.04;
-      faceRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.45) * 0.08;
+      faceRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.2) * 0.035;
+      faceRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.38) * 0.07;
     }
   });
 
   return (
-    <group ref={faceRef} position={[0, 0.05, 0.4]} scale={0.9}>
-      <mesh>
-        <sphereGeometry args={[1.05, 48, 32]} />
-        <meshPhysicalMaterial color="#101827" emissive={color} emissiveIntensity={0.16} roughness={0.3} metalness={0.45} clearcoat={0.7} />
+    <group ref={faceRef} position={[0, -0.08, 0.4]} scale={0.88}>
+      {/* Glass cranial shell: a translucent brain is visible through the upper skull. */}
+      <mesh position={[0, 0.52, -0.05]} scale={[1.05, 1.1, 0.92]}>
+        <sphereGeometry args={[1, 48, 32]} />
+        <meshPhysicalMaterial color="#9bdcff" transparent opacity={0.13} roughness={0.08} metalness={0.15} transmission={0.18} thickness={0.4} clearcoat={1} />
       </mesh>
-      <mesh position={[0, 0.03, 1.01]} scale={[0.84, 0.96, 0.18]}>
-        <sphereGeometry args={[1, 32, 24]} />
-        <meshBasicMaterial color={color} transparent opacity={0.07} blending={THREE.AdditiveBlending} />
+      <group position={[0, 0.5, -0.1]} scale={[0.9, 0.82, 0.72]}>
+        {[-0.4, 0.4].map((x) => (
+          <mesh key={x} position={[x, 0, 0]} scale={[0.85, 1, 1]} rotation={[0, x * 0.18, x * 0.12]}>
+            <sphereGeometry args={[0.68, 32, 24]} />
+            <meshPhysicalMaterial color={color} emissive={color} emissiveIntensity={0.22} roughness={0.42} metalness={0.16} clearcoat={0.65} />
+          </mesh>
+        ))}
+        {[...Array(9)].map((_, i) => (
+          <mesh key={i} position={[(i % 3 - 1) * 0.42, 0.15 + Math.floor(i / 3) * 0.2, 0.58]} rotation={[0, 0, (i % 2 ? 1 : -1) * 0.35]}>
+            <torusGeometry args={[0.22, 0.025, 8, 24, Math.PI * 1.55]} />
+            <meshBasicMaterial color="#f6a6c8" transparent opacity={0.75} />
+          </mesh>
+        ))}
+      </group>
+      {/* Anatomical bust and face */}
+      <mesh position={[0, -0.83, 0]} scale={[0.48, 0.62, 0.38]}>
+        <cylinderGeometry args={[0.82, 1.02, 1.5, 32]} />
+        <meshPhysicalMaterial color={skin} roughness={0.62} metalness={0.02} clearcoat={0.18} />
       </mesh>
-      {[-0.38, 0.38].map((x) => (
-        <group key={x} position={[x, curious ? 0.2 : 0.12, 0.95]} rotation={[0, 0, (curious ? x : 0) * 0.35]}>
-          <mesh scale={[0.22, curious ? 0.09 : 0.13, 0.07]}>
-            <sphereGeometry args={[1, 20, 12]} />
-            <meshBasicMaterial color="#dbeafe" />
-          </mesh>
-          <mesh position={[0, 0, 0.08]} scale={0.07}>
-            <sphereGeometry args={[1, 16, 12]} />
-            <meshBasicMaterial color={color} />
-          </mesh>
+      <mesh position={[0, 0.02, 0.35]} scale={[0.82, 1.02, 0.72]}>
+        <sphereGeometry args={[1, 48, 32]} />
+        <meshPhysicalMaterial color={skin} roughness={0.58} metalness={0.02} clearcoat={0.2} />
+      </mesh>
+      {[-0.82, 0.82].map((x) => <mesh key={x} position={[x, 0.02, 0.28]} scale={[0.18, 0.3, 0.12]}><sphereGeometry args={[1, 20, 16]} /><meshPhysicalMaterial color={skin} roughness={0.65} /></mesh>)}
+      <mesh position={[0, -0.02, 1.02]} scale={[0.12, 0.28, 0.12]} rotation={[0.1, 0, 0]}><coneGeometry args={[1, 1.5, 20]} /><meshPhysicalMaterial color={skin} roughness={0.6} /></mesh>
+      {[-0.32, 0.32].map((x) => (
+        <group key={x} position={[x, 0.24, 0.92]} rotation={[0, 0, (curious ? x : 0) * 0.28]}>
+          <mesh scale={[0.24, curious ? 0.09 : 0.12, 0.07]}><sphereGeometry args={[1, 24, 16]} /><meshPhysicalMaterial color="#f1d7c9" roughness={0.4} /></mesh>
+          <mesh position={[0, 0, 0.08]} scale={0.075}><sphereGeometry args={[1, 16, 12]} /><meshBasicMaterial color="#20151b" /></mesh>
         </group>
       ))}
-      <mesh position={[0, happy ? -0.35 : -0.28, 0.98]} rotation={[Math.PI / 2, 0, 0]} scale={[happy ? 0.34 : intense ? 0.18 : 0.24, 0.1, 0.06]}>
-        <torusGeometry args={[1, 0.32, 12, 32, Math.PI]} />
-        <meshBasicMaterial color={happy ? "#fda4af" : color} />
-      </mesh>
-      <Text position={[0, -1.38, 0]} fontSize={0.12} color={color} anchorX="center" anchorY="middle">
-        {mood ? mood.emotion.toUpperCase() : "RESTING STATE • OBSERVING"}
-      </Text>
+      <mesh position={[0, happy ? -0.34 : -0.27, 0.91]} rotation={[Math.PI / 2, 0, 0]} scale={[happy ? 0.34 : intense ? 0.16 : 0.23, 0.1, 0.06]}><torusGeometry args={[1, 0.3, 12, 32, Math.PI]} /><meshBasicMaterial color={happy ? "#ff9da9" : "#5c2831"} /></mesh>
+      <Text position={[0, -1.62, 0]} fontSize={0.12} color={color} anchorX="center" anchorY="middle">{mood ? mood.emotion.toUpperCase() : "RESTING STATE • OBSERVING"}</Text>
     </group>
   );
 }
