@@ -25,6 +25,58 @@ export interface Lobe {
 interface ConnectomeSceneProps {
   onSelectLobe: (lobe: Lobe) => void;
   activeLobeId: string | null;
+  mood?: {
+    emotion: string;
+    expression: string;
+    aura: string;
+  };
+}
+
+function MindFace({ mood, color }: { mood?: ConnectomeSceneProps["mood"]; color: string }) {
+  const faceRef = useRef<THREE.Group>(null);
+  const emotion = mood?.emotion.toLowerCase() ?? "neutral";
+  const happy = /smile|warmth|radiant|camaraderie|energy|euphoria/.test(emotion);
+  const curious = /wonder|curious|contemplation|debugging|wanderlust/.test(emotion);
+  const intense = /focus|grit|electric|raw/.test(emotion);
+
+  useFrame((state) => {
+    if (faceRef.current) {
+      faceRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.2) * 0.04;
+      faceRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.45) * 0.08;
+    }
+  });
+
+  return (
+    <group ref={faceRef} position={[0, 0.05, 0.4]} scale={0.9}>
+      <mesh>
+        <sphereGeometry args={[1.05, 48, 32]} />
+        <meshPhysicalMaterial color="#101827" emissive={color} emissiveIntensity={0.16} roughness={0.3} metalness={0.45} clearcoat={0.7} />
+      </mesh>
+      <mesh position={[0, 0.03, 1.01]} scale={[0.84, 0.96, 0.18]}>
+        <sphereGeometry args={[1, 32, 24]} />
+        <meshBasicMaterial color={color} transparent opacity={0.07} blending={THREE.AdditiveBlending} />
+      </mesh>
+      {[-0.38, 0.38].map((x) => (
+        <group key={x} position={[x, curious ? 0.2 : 0.12, 0.95]} rotation={[0, 0, (curious ? x : 0) * 0.35]}>
+          <mesh scale={[0.22, curious ? 0.09 : 0.13, 0.07]}>
+            <sphereGeometry args={[1, 20, 12]} />
+            <meshBasicMaterial color="#dbeafe" />
+          </mesh>
+          <mesh position={[0, 0, 0.08]} scale={0.07}>
+            <sphereGeometry args={[1, 16, 12]} />
+            <meshBasicMaterial color={color} />
+          </mesh>
+        </group>
+      ))}
+      <mesh position={[0, happy ? -0.35 : -0.28, 0.98]} rotation={[Math.PI / 2, 0, 0]} scale={[happy ? 0.34 : intense ? 0.18 : 0.24, 0.1, 0.06]}>
+        <torusGeometry args={[1, 0.32, 12, 32, Math.PI]} />
+        <meshBasicMaterial color={happy ? "#fda4af" : color} />
+      </mesh>
+      <Text position={[0, -1.38, 0]} fontSize={0.12} color={color} anchorX="center" anchorY="middle">
+        {mood ? mood.emotion.toUpperCase() : "RESTING STATE • OBSERVING"}
+      </Text>
+    </group>
+  );
 }
 
 function NeuralCloud() {
@@ -167,7 +219,9 @@ function LobeNode({
 export default function ConnectomeScene({
   onSelectLobe,
   activeLobeId,
+  mood,
 }: ConnectomeSceneProps) {
+  const moodColor = mood ? connectomeData.lobes.find((lobe) => lobe.mood?.emotion === mood.emotion)?.color ?? "#38bdf8" : "#38bdf8";
   return (
     <div className="w-full h-full relative bg-[#09090b]">
       <Canvas camera={{ position: [0, 0, 6.2], fov: 45 }}>
@@ -176,6 +230,7 @@ export default function ConnectomeScene({
         <pointLight position={[-10, -10, -10]} color="#38bdf8" intensity={0.8} />
 
         <NeuralCloud />
+        <MindFace mood={mood} color={moodColor} />
 
         {connectomeData.lobes.map((lobe) => (
           <LobeNode

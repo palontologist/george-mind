@@ -80,6 +80,7 @@ export default function Home() {
             <ConnectomeScene
               onSelectLobe={(lobe) => setSelectedLobe(lobe)}
               activeLobeId={selectedLobe?.id || null}
+              mood={currentMood}
             />
 
             {/* Persistent Persona / State Overlay Card at Bottom-Left */}
