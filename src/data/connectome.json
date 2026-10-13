@@ -1,6 +1,10 @@
 {
   "subject": "George Karani",
-  "coordinates": ["Nairobi", "San Francisco", "New York"],
+  "coordinates": [
+    "Nairobi",
+    "San Francisco",
+    "New York"
+  ],
   "tagline": "Physical AI • Embodied Intelligence • Autonomous Systems",
   "podcastUrl": "https://youtube.com/@frontforumfocus",
   "lobes": [
@@ -9,28 +13,100 @@
       "name": "Physical AI & Embodied Reflexes",
       "tag": "MOTOR_CORTEX",
       "color": "#f97316",
-      "position": [0, 2.5, 0.5],
+      "position": [
+        0.0,
+        3.4,
+        -14.0
+      ],
       "mood": {
         "emotion": "Laser Focus & Flow State",
-        "expression": "Locked in, analyzing telemetry waveforms and contact slip forces",
-        "aura": "Amber Pulse • 120 BPM",
-        "thought": "Autoregression is too slow for physics. If you can't react in 10ms, you slip."
+        "expression": "focus",
+        "expressionLabel": "Brow locked, eyes narrowed, jaw set",
+        "aura": "Amber Pulse • 128 BPM",
+        "thought": "Autoregression is too slow for physics. If you can't react in 10ms, you slip.",
+        "thoughts": [
+          "Autoregression is too slow for physics. If you can't react in 10ms, you slip.",
+          "The first 15 tasks were obedient. Then the wrist rotated and every token I'd trained became a lie.",
+          "A grasp that looks clean on a replay is just physics you got lucky with."
+        ],
+        "notes": [
+          "latency or nothing",
+          "keep the loop closed"
+        ]
       },
       "description": "Exploration of reflexive, low-latency intelligence. Moving beyond slow autoregressive text tokens toward motor memory and contact physics.",
+      "region": {
+        "label": "Primary motor cortex",
+        "dir": [
+          0.46,
+          0.3,
+          0.83
+        ]
+      },
       "nodes": [
         {
           "title": "Muscle Memory (UniBot-V1)",
           "subtitle": "Looped-Transformer Instinct Layer",
           "metrics": "17/32 Tasks Solved • Zero-Slip Contact Verification",
           "repo": "https://github.com/palontologist/unibot-muscle-memory",
-          "content": "Multi-task behavioral cloning policy utilizing a recurrent looped-transformer architecture for sub-10ms reactive manipulation and contact-verified grasping."
+          "content": "Multi-task behavioral cloning policy utilizing a recurrent looped-transformer architecture for sub-10ms reactive manipulation and contact-verified grasping.",
+          "mood": {
+            "emotion": "Stubborn Pride",
+            "expression": "focus",
+            "expressionLabel": "Tight smile held back by concentration",
+            "aura": "Ember • 132 BPM",
+            "thought": "32 tasks. 17 solved. I still think about the other 15 every time I open the eval script.",
+            "thoughts": [
+              "32 tasks. 17 solved. I still think about the other 15 every time I open the eval script.",
+              "Zero-slip contact verification was the only metric that actually meant anything.",
+              "Telling a robot to 'be careful' is not an instruction. Hertz is."
+            ],
+            "notes": [
+              "still stuck on contact verification",
+              "the 15 unsolved tasks won't leave me alone",
+              "sub-10ms or it isn't reactive"
+            ]
+          },
+          "region": {
+            "label": "Motor engram / M1",
+            "dir": [
+              0.734,
+              0.114,
+              0.669
+            ]
+          }
         },
         {
           "title": "Fast & Curious",
           "subtitle": "JSAE Autonomous Driving AI Challenge",
           "metrics": "43s Target Pace • Vehicle-Specific MPC",
           "repo": "https://github.com/palontologist/FastAndCurious",
-          "content": "Model Predictive Control (MPC) tracking modules, ROS 2 sensor fusion (IMU/GNSS/LiDAR), and autonomous stuck-recovery supervisor for high-speed racing karts."
+          "content": "Model Predictive Control (MPC) tracking modules, ROS 2 sensor fusion (IMU/GNSS/LiDAR), and autonomous stuck-recovery supervisor for high-speed racing karts.",
+          "mood": {
+            "emotion": "Adrenaline & Trust",
+            "expression": "energy",
+            "expressionLabel": "Wide eyes, mouth open mid-countdown",
+            "aura": "Solar Flare • 140 BPM",
+            "thought": "Every controller that worked on the simulator betrayed me at corner three.",
+            "thoughts": [
+              "Every controller that worked on the simulator betrayed me at corner three.",
+              "I built a stuck-recovery supervisor because ego has to be embarrassed into continuing.",
+              "The kart doesn't know it is racing. That's why it is faster than me."
+            ],
+            "notes": [
+              "MPC tuning at midnight",
+              "stuck-recovery finally stable",
+              "corner three is always where it breaks"
+            ]
+          },
+          "region": {
+            "label": "Predictive loop",
+            "dir": [
+              0.372,
+              0.544,
+              0.752
+            ]
+          }
         }
       ]
     },
@@ -39,34 +115,131 @@
       "name": "Silicon & Low-Level Edge",
       "tag": "COMPUTE_CORE",
       "color": "#06b6d4",
-      "position": [-2.2, 0.8, -0.4],
+      "position": [
+        -13.5,
+        4.6,
+        -6.5
+      ],
       "mood": {
         "emotion": "Deep Contemplation & Debugging",
-        "expression": "Chin rested on hand, dissecting timing hazards and pipeline stalls",
-        "aura": "Electric Cyan • Cold Glow",
-        "thought": "When the compiler gives up, you have to go down to the silicon gates."
+        "expression": "contemplation",
+        "expressionLabel": "Chin down, eyes scanning, lips parted",
+        "aura": "Electric Cyan • 58 BPM",
+        "thought": "When the compiler gives up, you have to go down to the silicon gates.",
+        "thoughts": [
+          "When the compiler gives up, you have to go down to the silicon gates.",
+          "A hazard is just a story the pipeline tells itself about the future.",
+          "Hades-V taught me that forwarding units are just arguments."
+        ],
+        "notes": [
+          "what if it just ran here",
+          "no round trips"
+        ]
       },
       "description": "Hardware-software co-design, custom processor microarchitecture, and on-device offline inference.",
+      "region": {
+        "label": "Occipital / visual association",
+        "dir": [
+          -0.1,
+          0.16,
+          -0.98
+        ]
+      },
       "nodes": [
         {
           "title": "Hades-V",
           "subtitle": "32-bit Pipelined RISC-V Processor",
           "metrics": "SystemVerilog • Custom Instruction Pipeline",
-          "content": "From-scratch pipelined RISC-V processor implementing architectural hazard handling, forwarding units, and low-level execution efficiency."
+          "content": "From-scratch pipelined RISC-V processor implementing architectural hazard handling, forwarding units, and low-level execution efficiency.",
+          "mood": {
+            "emotion": "Quiet Pride & Patience",
+            "expression": "contemplation",
+            "expressionLabel": "Still, patient, one brow slightly raised",
+            "aura": "Cyan • 62 BPM",
+            "thought": "Writing it in SystemVerilog made me slow down in a way I needed to.",
+            "thoughts": [
+              "Writing it in SystemVerilog made me slow down in a way I needed to.",
+              "You cannot bluff a hazard unit. The waveform knows.",
+              "Slow to write, faster forever after."
+            ],
+            "notes": [
+              "hazards, forwarding, then sleep",
+              "slowing down was the point",
+              "writing my own ISA shows what vendor docs hide"
+            ]
+          },
+          "region": {
+            "label": "V1 visual cortex",
+            "dir": [
+              -0.411,
+              -0.022,
+              -0.911
+            ]
+          }
         },
         {
           "title": "Mobile Edge Assistant (MEA)",
           "subtitle": "On-Device Micro-Agents",
           "metrics": "FunctionGemma 270M–1B • whisper.cpp • Zero Egress",
           "repo": "https://github.com/palontologist/mobile-1b-agent",
-          "content": "Sub-3B micro-LLMs executing deterministic tool calling entirely on-device on commodity smartphones."
+          "content": "Sub-3B micro-LLMs executing deterministic tool calling entirely on-device on commodity smartphones.",
+          "mood": {
+            "emotion": "Principled Defiance",
+            "expression": "doubt",
+            "expressionLabel": "One brow up, lips pressed",
+            "aura": "Ice • 86 BPM",
+            "thought": "If my agent needs a round trip to know what a calendar is, it isn't mine.",
+            "thoughts": [
+              "If my agent needs a round trip to know what a calendar is, it isn't mine.",
+              "Sub-3B and no egress. That's the whole thesis, and it's a boring-sounding one.",
+              "Latency is a privacy feature nobody markets."
+            ],
+            "notes": [
+              "is a 270M model actually useful?",
+              "zero egress or it isn't mine",
+              "whisper.cpp on a mid-range phone — surprisingly fine"
+            ]
+          },
+          "region": {
+            "label": "Parietal association",
+            "dir": [
+              -0.054,
+              0.416,
+              -0.908
+            ]
+          }
         },
         {
           "title": "Greta Productivity Engine",
           "subtitle": "Native Linux Daemon & Local Analytics",
           "metrics": "Rust • Linux/Hyprland • SQLite • Tauri 2.0",
           "repo": "https://github.com/palontologist/greta-productivity-agent",
-          "content": "Native Rust engine tracking xprop window states and telemetry with zero cloud dependency."
+          "content": "Native Rust engine tracking xprop window states and telemetry with zero cloud dependency.",
+          "mood": {
+            "emotion": "Calm Control",
+            "expression": "neutral",
+            "expressionLabel": "Relaxed, settled, faintly amused",
+            "aura": "Slate • 64 BPM",
+            "thought": "I know what every window on my machine is doing. That feels less like surveillance and more like breathing.",
+            "thoughts": [
+              "I know what every window on my machine is doing. That feels less like surveillance and more like breathing.",
+              "Rust because I wanted the daemon to be the quietest thing in the room.",
+              "No telemetry leaves. Ever. That's the whole feature."
+            ],
+            "notes": [
+              "xprop says everything",
+              "no cloud, no telemetry, no apology",
+              "SQLite doing heavy lifting"
+            ]
+          },
+          "region": {
+            "label": "Frontal pole",
+            "dir": [
+              0.165,
+              -0.053,
+              -0.985
+            ]
+          }
         }
       ]
     },
@@ -75,27 +248,99 @@
       "name": "frontforumfocus Podcast",
       "tag": "BROADCAST_FEED",
       "color": "#ec4899",
-      "position": [1.5, -1.2, -1.5],
+      "position": [
+        -11.0,
+        5.6,
+        9.5
+      ],
       "mood": {
         "emotion": "Radiant Smile & Shared Discovery",
-        "expression": "Mid-laugh with a guest, uncovering an unexpected technical intuition",
-        "aura": "Warm Magenta • Vibrant Resonance",
-        "thought": "The best technical insights come out when two builders drop their guard."
+        "expression": "joy",
+        "expressionLabel": "Full Duchenne smile, eyes crinkled",
+        "aura": "Warm Magenta • 104 BPM",
+        "thought": "The best technical insights come out when two builders drop their guard.",
+        "thoughts": [
+          "The best technical insights come out when two builders drop their guard.",
+          "Forty-plus episodes and I still get nervous before the record light.",
+          "Someone always says the thing I've been avoiding for a year."
+        ],
+        "notes": [
+          "they open up if you wait",
+          "ask about the build, not the launch"
+        ]
       },
       "description": "Long-form dialogues and deep dives with founders, researchers, and builders on YouTube.",
+      "region": {
+        "label": "Auditory cortex",
+        "dir": [
+          -0.86,
+          -0.06,
+          0.24
+        ]
+      },
       "nodes": [
         {
           "title": "frontforumfocus Podcast",
           "subtitle": "40+ Episodes • YouTube",
           "metrics": "youtube.com/@frontforumfocus",
           "repo": "https://youtube.com/@frontforumfocus",
-          "content": "Hosting 40+ conversations exploring the frontiers of robotics, embodied intelligence, climate tech telemetry, open hardware, and African builder ecosystems."
+          "content": "Hosting 40+ conversations exploring the frontiers of robotics, embodied intelligence, climate tech telemetry, open hardware, and African builder ecosystems.",
+          "mood": {
+            "emotion": "Warm Belonging",
+            "expression": "warmth",
+            "expressionLabel": "Head tilted, half-smile, soft eyes",
+            "aura": "Rose • 72 BPM",
+            "thought": "Hosting taught me how to hear what someone hasn't said yet.",
+            "thoughts": [
+              "Hosting taught me how to hear what someone hasn't said yet.",
+              "The best episodes were the ones where we both left with better questions.",
+              "Forty-plus. Still slightly terrified every time."
+            ],
+            "notes": [
+              "40+ episodes and the question never gets old",
+              "people open up around minute nine",
+              "best guests are the ones still building"
+            ]
+          },
+          "region": {
+            "label": "Auditory cortex",
+            "dir": [
+              -0.776,
+              -0.252,
+              0.578
+            ]
+          }
         },
         {
           "title": "Featured Conversations",
           "subtitle": "Robotics, RISC-V & Physical AI",
           "repo": "https://youtube.com/@frontforumfocus",
-          "content": "Deep technical breakdowns with operators building real physical infrastructure and AI systems."
+          "content": "Deep technical breakdowns with operators building real physical infrastructure and AI systems.",
+          "mood": {
+            "emotion": "Reverent Curiosity",
+            "expression": "wonder",
+            "expressionLabel": "Brows peaked, mouth slightly open",
+            "aura": "Orchid • 78 BPM",
+            "thought": "The people actually shipping the hardware are the most patient people I know.",
+            "thoughts": [
+              "The people actually shipping the hardware are the most patient people I know.",
+              "Every guest taught me more in 90 minutes than a month of reading.",
+              "I ask about the failure, never the demo. That's why they keep coming back."
+            ],
+            "notes": [
+              "operators over explainers",
+              "hardware people are unreal patient",
+              "one call teaches me more than a month of reading"
+            ]
+          },
+          "region": {
+            "label": "Wernicke's area",
+            "dir": [
+              -0.948,
+              0.229,
+              0.22
+            ]
+          }
         }
       ]
     },
@@ -104,26 +349,98 @@
       "name": "Ecosystem & Builder Salons",
       "tag": "FRONTAL_BROCA",
       "color": "#eab308",
-      "position": [2.2, 0.8, -0.4],
+      "position": [
+        0.0,
+        6.4,
+        14.5
+      ],
       "mood": {
         "emotion": "Electric Energy & Room Presence",
-        "expression": "High energy, commanding the stage at ClawCamp and Corgi Salons",
-        "aura": "Solar Gold • High Voltage",
-        "thought": "Culture is built by putting high-conviction builders in the same room."
+        "expression": "energy",
+        "expressionLabel": "Chin up, brows high, mid-sentence",
+        "aura": "Solar Gold • 132 BPM",
+        "thought": "Culture is built by putting high-conviction builders in the same room.",
+        "thoughts": [
+          "Culture is built by putting high-conviction builders in the same room.",
+          "A thousand builders showed up because somebody decided they should exist.",
+          "The room changes when the hardware starts humming."
+        ],
+        "notes": [
+          "rooms over posts",
+          "hardware on the table"
+        ]
       },
       "description": "Connecting frontier builders, running hacker salons in SF/NYC/NBO, and fostering African tech infrastructure.",
+      "region": {
+        "label": "Dorsolateral prefrontal",
+        "dir": [
+          0.36,
+          0.64,
+          0.68
+        ]
+      },
       "nodes": [
         {
           "title": "Physical AI & Wearable Builder Salons",
           "subtitle": "San Francisco & New York (Corgi)",
           "metrics": "Curated Hacker Salons • Hardware Demos",
-          "content": "Gatherings bringing together robotics researchers, wearable pioneers (Omi, Rabbit), and AI agent architects."
+          "content": "Gatherings bringing together robotics researchers, wearable pioneers (Omi, Rabbit), and AI agent architects.",
+          "mood": {
+            "emotion": "Generous Excitement",
+            "expression": "joy",
+            "expressionLabel": "Laughing, leaning in",
+            "aura": "Gold • 108 BPM",
+            "thought": "A room where a wearable and a robot arm argue about latency is my favourite kind of room.",
+            "thoughts": [
+              "A room where a wearable and a robot arm argue about latency is my favourite kind of room.",
+              "I curate for the person who hasn't spoken yet.",
+              "Someone always leaves with a co-founder."
+            ],
+            "notes": [
+              "a wearable and a robot arm arguing about latency",
+              "hardware on the table, no slides",
+              "best room I've been in all year"
+            ]
+          },
+          "region": {
+            "label": "Dorsolateral PFC",
+            "dir": [
+              0.667,
+              0.463,
+              0.584
+            ]
+          }
         },
         {
           "title": "Startup Grind & CMX Nairobi",
           "subtitle": "Chapter Leadership & Builder Programs",
           "metrics": "1,000+ Builders • ClawCamp Hackathons",
-          "content": "Ecosystem leadership designing high-engagement technical bootcamps, pitch cohorts, and institutional partner bridges (Zoho, ETHGlobal)."
+          "content": "Ecosystem leadership designing high-engagement technical bootcamps, pitch cohorts, and institutional partner bridges (Zoho, ETHGlobal).",
+          "mood": {
+            "emotion": "Fierce Investment",
+            "expression": "focus",
+            "expressionLabel": "Eyes locked on, chin forward",
+            "aura": "Brass • 124 BPM",
+            "thought": "Nairobi doesn't need more people told to wait. It needs rooms with hardware on the table.",
+            "thoughts": [
+              "Nairobi doesn't need more people told to wait. It needs rooms with hardware on the table.",
+              "1,000+ builders and I can only name a handful of their companies.",
+              "Institutional bridges matter less than the first demo that actually works."
+            ],
+            "notes": [
+              "1,000 builders and still hungry",
+              "no more 'wait your turn' rooms",
+              "Zoho + ETHGlobal showed up — that changed things"
+            ]
+          },
+          "region": {
+            "label": "Broca's area",
+            "dir": [
+              0.233,
+              0.82,
+              0.523
+            ]
+          }
         }
       ]
     },
@@ -132,24 +449,66 @@
       "name": "Movement, Sports & Endurance",
       "tag": "SOMATOSENSORY",
       "color": "#ef4444",
-      "position": [0, -1.8, 1.2],
+      "position": [
+        13.0,
+        3.2,
+        7.0
+      ],
       "mood": {
         "emotion": "Raw Grit & Exhausted Euphoria",
-        "expression": "Sweat on the brow, deep breathing after pushing through the 25th kilometer",
-        "aura": "Crimson Blaze • Heavy Heartbeat",
-        "thought": "Your mind wants to stop at 40%. The legs keep moving regardless."
+        "expression": "grit",
+        "expressionLabel": "Narrowed eyes, heavy breath, lifted mouth",
+        "aura": "Crimson Blaze • 148 BPM",
+        "thought": "Your mind wants to stop at 40%. The legs keep moving regardless.",
+        "thoughts": [
+          "Your mind wants to stop at 40%. The legs keep moving regardless.",
+          "2,000m in the Rift Valley. The air is thin and so is the excuse.",
+          "Stamina is the only debugger that never lies to me."
+        ],
+        "notes": [
+          "the 25th km is honest",
+          "body first"
+        ]
       },
       "description": "High-altitude running, physical stamina, and the discipline of endurance sprints.",
+      "region": {
+        "label": "Cerebellum",
+        "dir": [
+          0.0,
+          -0.74,
+          -0.6
+        ]
+      },
       "nodes": [
-        {
-          "title": "Kenyan Endurance & High-Altitude Pacing",
-          "subtitle": "The Philosophy of the Long Grind",
-          "content": "Running at 2,000m+ elevation in the Rift Valley. Physical training as the calibration baseline for mental resilience during intense multi-month engineering cycles."
-        },
         {
           "title": "Racing Dynamics & Trajectory Lines",
           "subtitle": "Apex Control & Physical Limits",
-          "content": "Understanding real-world friction, tire grip limits, and the visceral feel of vehicle dynamics translates directly into tuning MPC controllers."
+          "content": "Understanding real-world friction, tire grip limits, and the visceral feel of vehicle dynamics translates directly into tuning MPC controllers.",
+          "mood": {
+            "emotion": "Intense Focus",
+            "expression": "focus",
+            "expressionLabel": "Narrowed, locked on the apex",
+            "aura": "Crimson • 130 BPM",
+            "thought": "Grip limits don't care what the model predicted. Neither should my controller.",
+            "thoughts": [
+              "Grip limits don't care what the model predicted. Neither should my controller.",
+              "You can feel a 0.2 friction coefficient change in your shoulders.",
+              "Brake too early and you feel it as loss. Brake late and you feel it as fear."
+            ],
+            "notes": [
+              "grip limits don't care what the model said",
+              "feeling the rear step out > any log",
+              "tuning the controller against the kerb"
+            ]
+          },
+          "region": {
+            "label": "Motor planning",
+            "dir": [
+              0.041,
+              -0.571,
+              -0.82
+            ]
+          }
         }
       ]
     },
@@ -158,29 +517,126 @@
       "name": "Global Transits & Constellations",
       "tag": "SPATIAL_LOCI",
       "color": "#a855f7",
-      "position": [-1.5, -1.2, -1.5],
+      "position": [
+        15.0,
+        6.0,
+        -6.0
+      ],
       "mood": {
         "emotion": "Wanderlust & Jet-Lagged Wonder",
-        "expression": "Staring out the plane window at 35,000 feet, bridging two continents",
-        "aura": "Astral Purple • Soft Drift",
-        "thought": "Between Nairobi, SF, and New York, home is where the workbench is."
+        "expression": "wonder",
+        "expressionLabel": "Brows peaked, looking past you",
+        "aura": "Astral Purple • 76 BPM",
+        "thought": "Between Nairobi, SF, and New York, home is where the workbench is.",
+        "thoughts": [
+          "Between Nairobi, SF, and New York, home is where the workbench is.",
+          "35,000 feet and the idea is still the clearest it's been in months.",
+          "Three cities. Same problem. The lighting just changes."
+        ],
+        "notes": [
+          "new city, same questions",
+          "terrain tells on you"
+        ]
       },
       "description": "The triangle of nodes shaping the work: Nairobi, San Francisco, and New York.",
+      "region": {
+        "label": "Hippocampus / limbic",
+        "dir": [
+          0.54,
+          -0.46,
+          0.62
+        ]
+      },
       "nodes": [
         {
           "title": "Nairobi, Kenya",
           "subtitle": "Home Base & Frontier Proving Grounds",
-          "content": "Hardware prototyping, local developer talent, and extreme-terrain telemetry testing."
+          "content": "Hardware prototyping, local developer talent, and extreme-terrain telemetry testing.",
+          "mood": {
+            "emotion": "Rooted Certainty",
+            "expression": "warmth",
+            "expressionLabel": "Settled, faintly smiling",
+            "aura": "Violet • 70 BPM",
+            "thought": "This is where everything gets built before it gets polished anywhere else.",
+            "thoughts": [
+              "This is where everything gets built before it gets polished anywhere else.",
+              "The terrain breaks things. That's why it makes good engineers.",
+              "Everything I've shipped started on a bench here."
+            ],
+            "notes": [
+              "everything gets built here first",
+              "the terrain is the best test rig",
+              "talent everywhere, still under-asked"
+            ]
+          },
+          "region": {
+            "label": "Hippocampus",
+            "dir": [
+              0.723,
+              -0.611,
+              0.323
+            ]
+          }
         },
         {
           "title": "San Francisco & Bay Area",
           "subtitle": "Frontier AI & Robotics Research",
-          "content": "Physical AI salons, compute networks, and frontier model discussions."
+          "content": "Physical AI salons, compute networks, and frontier model discussions.",
+          "mood": {
+            "emotion": "Restless Ambition",
+            "expression": "energy",
+            "expressionLabel": "Alert, scanning the room",
+            "aura": "Indigo • 118 BPM",
+            "thought": "Everything here is one funding round from being interesting. That keeps me sharp.",
+            "thoughts": [
+              "Everything here is one funding round from being interesting. That keeps me sharp.",
+              "The compute is real and the ambition is faster.",
+              "I go for the collaborators, then I come home to actually build."
+            ],
+            "notes": [
+              "one funding round from interesting",
+              "compute networks everywhere",
+              "sharpest month of the year"
+            ]
+          },
+          "region": {
+            "label": "Place cells",
+            "dir": [
+              0.609,
+              -0.224,
+              0.761
+            ]
+          }
         },
         {
           "title": "New York City",
           "subtitle": "Design, Wearables & Embodied AI",
-          "content": "Omi residency, builder collisions, and ambient interface design."
+          "content": "Omi residency, builder collisions, and ambient interface design.",
+          "mood": {
+            "emotion": "Playful Fascination",
+            "expression": "joy",
+            "expressionLabel": "Amused, one brow up",
+            "aura": "Orchid • 104 BPM",
+            "thought": "If it's ambient and it disappears into your day, it's not a gadget yet.",
+            "thoughts": [
+              "If it's ambient and it disappears into your day, it's not a gadget yet.",
+              "Design people understand embodiment faster than most robotics people do.",
+              "I want the interface to be felt, not seen."
+            ],
+            "notes": [
+              "ambient has to disappear",
+              "Omi residency crowd",
+              "if it needs attention it isn't ambient"
+            ]
+          },
+          "region": {
+            "label": "Retrosplenial cortex",
+            "dir": [
+              0.257,
+              -0.647,
+              0.718
+            ]
+          }
         }
       ]
     },
@@ -189,21 +645,223 @@
       "name": "The Tribe & Co-conspirators",
       "tag": "SOCIAL_CONNECTOME",
       "color": "#10b981",
-      "position": [0, 0, -2.2],
+      "position": [
+        -15.0,
+        2.0,
+        4.0
+      ],
       "mood": {
         "emotion": "Candid Warmth & Camaraderie",
-        "expression": "Unfiltered laughter with friends, late-night hackathon debriefs",
-        "aura": "Emerald Warmth • Harmonious",
-        "thought": "Everything worthwhile was built with good friends in messy rooms."
+        "expression": "warmth",
+        "expressionLabel": "Head tilted, unguarded half-smile",
+        "aura": "Emerald Warmth • 68 BPM",
+        "thought": "Everything worthwhile was built with good friends in messy rooms.",
+        "thoughts": [
+          "Everything worthwhile was built with good friends in messy rooms.",
+          "Nobody in my circle needs the word co-founder to feel the weight of it.",
+          "The best debugging sessions have all been dinner conversations."
+        ],
+        "notes": [
+          "none of it solo",
+          "give credit early"
+        ]
       },
       "description": "Collaborators, mentors, and fellow builders across the journey.",
+      "region": {
+        "label": "Amygdala / social",
+        "dir": [
+          -0.56,
+          -0.44,
+          0.7
+        ]
+      },
       "nodes": [
         {
           "title": "Frontier Collaborators",
           "subtitle": "Omi, Startup Grind, Hardware Labs",
-          "content": "Partnering with teams across Omi, NVIDIA, Corgi, and African hacker hubs to turn early research into deployed prototypes."
+          "content": "Partnering with teams across Omi, NVIDIA, Corgi, and African hacker hubs to turn early research into deployed prototypes.",
+          "mood": {
+            "emotion": "Loyal Gratitude",
+            "expression": "warmth",
+            "expressionLabel": "Open, grateful, relaxed",
+            "aura": "Jade • 66 BPM",
+            "thought": "None of this was solo. Not one line of it.",
+            "thoughts": [
+              "None of this was solo. Not one line of it.",
+              "The credit graph is bigger than the commit graph.",
+              "I've never met a builder I didn't want to build with."
+            ],
+            "notes": [
+              "none of this was solo",
+              "Omi, NVIDIA, Corgi, the hubs",
+              "research into shipped prototypes"
+            ]
+          },
+          "region": {
+            "label": "Social / mirror neurons",
+            "dir": [
+              -0.228,
+              -0.567,
+              0.792
+            ]
+          }
         }
       ]
     }
-  ]
+  ],
+  "kinds": [
+    {
+      "id": "projects",
+      "label": "Projects",
+      "caption": "Things I build and run",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "events",
+      "label": "Events",
+      "caption": "Rooms I have hosted",
+      "color": "#f97316"
+    },
+    {
+      "id": "podcast",
+      "label": "Podcast",
+      "caption": "Conversations I have hosted",
+      "color": "#ec4899"
+    }
+  ],
+  "events": [
+    {
+      "id": "builder-salon-series",
+      "title": "Physical AI & Wearable Builder Salons",
+      "subtitle": "Curated hacker salons · hardware demos",
+      "metrics": "Robotics researchers · wearable pioneers · agent architects",
+      "region": {
+        "label": "Dorsolateral PFC",
+        "dir": [
+          0.667,
+          0.463,
+          0.584
+        ]
+      },
+      "content": "A recurring salon bringing together robotics researchers, wearable pioneers and AI agent architects. No slides — hardware on the table, and the disagreements are the point.",
+      "mood": {
+        "emotion": "Joy",
+        "expression": "joy",
+        "expressionLabel": "Joy",
+        "aura": "Bright · 104 BPM",
+        "thought": "A room where a wearable and a robot arm argue about latency is my favourite kind of room.",
+        "thoughts": [
+          "A room where a wearable and a robot arm argue about latency is my favourite kind of room.",
+          "The best demos are the ones that break. Then everybody leans in.",
+          "I leave every salon with three people I need to call."
+        ],
+        "notes": [
+          "no slides, hardware only",
+          "the demos are supposed to break",
+          "three people to call after"
+        ]
+      }
+    },
+    {
+      "id": "cmx-nairobi",
+      "title": "Startup Grind & CMX Nairobi",
+      "subtitle": "Technical bootcamps · pitch cohorts · institutional bridges",
+      "metrics": "1,000+ builders · ClawCamp hackathons · Zoho, ETHGlobal",
+      "region": {
+        "label": "Broca's area",
+        "dir": [
+          0.233,
+          0.82,
+          0.523
+        ]
+      },
+      "content": "Ecosystem leadership designing high-engagement technical bootcamps, pitch cohorts, and bridges to institutional partners across East Africa's builder scene.",
+      "mood": {
+        "emotion": "Focus",
+        "expression": "focus",
+        "expressionLabel": "Focus",
+        "aura": "Amber · 128 BPM",
+        "thought": "Nairobi doesn't need more people told to wait. It needs rooms with hardware on the table.",
+        "thoughts": [
+          "Nairobi doesn't need more people told to wait. It needs rooms with hardware on the table.",
+          "A thousand builders showed up and half of them had never met each other.",
+          "Institutional partners only show up once the room is already real."
+        ],
+        "notes": [
+          "no 'wait your turn' rooms",
+          "partners show up once it's real",
+          "1,000 builders, half had never met"
+        ]
+      }
+    },
+    {
+      "id": "clawcamp-hackathons",
+      "title": "ClawCamp Hackathons",
+      "subtitle": "Build weeks with hardware on the table",
+      "region": {
+        "label": "Frontal association",
+        "dir": [
+          0.45,
+          0.55,
+          0.72
+        ]
+      },
+      "content": "Multi-day build sprints where teams prototype physical systems end to end — and the demo has to move.",
+      "mood": {
+        "emotion": "Energy",
+        "expression": "energy",
+        "expressionLabel": "Energy",
+        "aura": "Gold · 132 BPM",
+        "thought": "Nothing exposes a bad architecture like a clock.",
+        "thoughts": [
+          "Nothing exposes a bad architecture like a clock.",
+          "Halfway through day one the teams split into 'ship it' and 'it's beautiful'.",
+          "The demo that runs is never the one people planned."
+        ],
+        "notes": [
+          "nothing exposes a bad architecture like a clock",
+          "day one splits ship vs. beautiful",
+          "the demo that runs was never planned"
+        ]
+      }
+    },
+    {
+      "id": "frontforumfocus-live",
+      "title": "frontforumfocus Live Sessions",
+      "subtitle": "Recorded conversations, in front of an audience",
+      "region": {
+        "label": "Auditory cortex",
+        "dir": [
+          -0.776,
+          -0.252,
+          0.578
+        ]
+      },
+      "content": "A live cut of the podcast — operators building real infrastructure, answering questions in the room instead of over email.",
+      "mood": {
+        "emotion": "Warmth",
+        "expression": "warmth",
+        "expressionLabel": "Warmth",
+        "aura": "Green · 70 BPM",
+        "thought": "Answering a question live is the only honest way to find out if you actually know the thing.",
+        "thoughts": [
+          "Answering a question live is the only honest way to find out if you actually know the thing.",
+          "The question from the room is always the one I hadn't prepared for.",
+          "Someone always mentions a problem I have too."
+        ],
+        "notes": [
+          "the room's question is the one I didn't prepare for",
+          "live answers expose what I half-know",
+          "someone always has my exact problem"
+        ]
+      }
+    }
+  ],
+  "contact": {
+    "email": "",
+    "linkedin": "https://linkedin.com/in/georgekarani",
+    "github": "https://github.com/palontologist",
+    "site": "https://frontforumfocus.com",
+    "podcast": "https://youtube.com/@frontforumfocus"
+  }
 }
