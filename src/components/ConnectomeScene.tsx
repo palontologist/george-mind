@@ -2,7 +2,7 @@
 
 import React, { useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Text, Float } from "@react-three/drei";
+import { OrbitControls, Text, Float, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import connectomeData from "../data/connectome.json";
 
@@ -25,7 +25,53 @@ export interface Lobe {
 interface ConnectomeSceneProps {
   onSelectLobe: (lobe: Lobe) => void;
   activeLobeId: string | null;
+  mood?: {
+    emotion: string;
+    expression: string;
+    aura: string;
+  };
 }
+
+function MindFace({ mood, color }: { mood?: ConnectomeSceneProps["mood"]; color: string }) {
+  const faceRef = useRef<THREE.Group>(null);
+  const { scene } = useGLTF("https://threejs.org/examples/models/gltf/LeePerrySmith/LeePerrySmith.glb");
+  const emotion = mood?.emotion.toLowerCase() ?? "neutral";
+  const happy = /smile|warmth|radiant|camaraderie|energy|euphoria/.test(emotion);
+  const curious = /wonder|curious|contemplation|debugging|wanderlust/.test(emotion);
+  const intense = /focus|grit|electric|raw/.test(emotion);
+  const face = useMemo(() => scene.clone(), [scene]);
+
+  useFrame((state) => {
+    if (faceRef.current) {
+      faceRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.2) * 0.025;
+      faceRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.38) * 0.06;
+    }
+    face.traverse((object) => {
+      if (!(object instanceof THREE.Mesh) || !object.morphTargetDictionary || !object.morphTargetInfluences) return;
+      const names = object.morphTargetDictionary;
+      const set = (pattern: RegExp, value: number) => {
+        const key = Object.keys(names).find((name) => pattern.test(name));
+        if (key) object.morphTargetInfluences![names[key]] = THREE.MathUtils.lerp(object.morphTargetInfluences![names[key]], value, 0.12);
+      };
+      set(/mouthSmile|smile/i, happy ? 0.72 : 0.02);
+      set(/browInnerUp|browOuterUp/i, curious ? 0.48 : intense ? 0.08 : 0.01);
+      set(/browDown/i, intense ? 0.34 : 0.01);
+      set(/jawOpen/i, curious ? 0.12 : 0.01);
+    });
+  });
+
+  return (
+    <group ref={faceRef} position={[0, -0.72, 0.35]} scale={0.42}>
+      <primitive object={face} rotation={[0, Math.PI, 0]} />
+      <pointLight color={color} intensity={0.8} distance={2.8} position={[0, 0.35, 0.7]} />
+      <Text position={[0, -0.78, 0]} fontSize={0.045} color={color} anchorX="center" anchorY="middle">
+        {mood ? mood.emotion.toUpperCase() : "RESTING STATE • OBSERVING"}
+      </Text>
+    </group>
+  );
+}
+
+useGLTF.preload("https://threejs.org/examples/models/gltf/LeePerrySmith/LeePerrySmith.glb");
 
 function NeuralCloud() {
   const count = 2400;
@@ -89,6 +135,41 @@ function NeuralCloud() {
         blending={THREE.AdditiveBlending}
       />
     </points>
+  );
+}
+
+function BrainModel({ activeColor }: { activeColor: string }) {
+  const brainRef = useRef<THREE.Group>(null);
+  const pathways = useMemo(() => Array.from({ length: 24 }, (_, index) => {
+    const side = index % 2 === 0 ? -1 : 1;
+    return new THREE.CatmullRomCurve3(Array.from({ length: 7 }, (__, pointIndex) => new THREE.Vector3(
+      side * (0.12 + pointIndex * 0.2),
+      -0.85 + (index % 7) * 0.28 + Math.sin(pointIndex * 1.8 + index) * 0.12,
+      -0.32 + (index % 5) * 0.18 + Math.cos(pointIndex * 1.2 + index) * 0.16,
+    )));
+  }), []);
+
+  useFrame((state) => {
+    if (!brainRef.current) return;
+    brainRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.24) * 0.16;
+    brainRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.7) * 0.035;
+  });
+
+  return (
+    <group ref={brainRef} position={[0, 0.55, 0]} scale={0.82}>
+      {[-0.58, 0.58].map((x) => (
+        <mesh key={x} position={[x, 0, 0]}>
+          <sphereGeometry args={[1.35, 48, 32]} />
+          <meshPhysicalMaterial color="#9aa6b7" roughness={0.82} metalness={0.05} clearcoat={0.18} transparent opacity={0.88} />
+        </mesh>
+      ))}
+      {pathways.map((pathway, index) => (
+        <mesh key={index}>
+          <tubeGeometry args={[pathway, 32, index % 4 === 0 ? 0.018 : 0.009, 6, false]} />
+          <meshBasicMaterial color={index % 4 === 0 ? activeColor : "#536477"} transparent opacity={index % 4 === 0 ? 0.72 : 0.32} blending={THREE.AdditiveBlending} />
+        </mesh>
+      ))}
+    </group>
   );
 }
 
@@ -167,20 +248,21 @@ function LobeNode({
 export default function ConnectomeScene({
   onSelectLobe,
   activeLobeId,
+  mood,
 }: ConnectomeSceneProps) {
+  const moodColor = mood ? connectomeData.lobes.find((lobe) => lobe.mood?.emotion === mood.emotion)?.color ?? "#38bdf8" : "#38bdf8";
   return (
     <div className="w-full h-full relative bg-[#09090b]">
       <Canvas camera={{ position: [0, 0, 6.2], fov: 45 }}>
-        <ambientLight intensity={0.4} />
-        <pointLight position={[10, 10, 10]} intensity={1.2} />
-        <pointLight position={[-10, -10, -10]} color="#38bdf8" intensity={0.8} />
+        <ambientLight intensity={0.65} />\n        <directionalLight position={[3, 5, 6]} intensity={2.2} color="#fff5e8" />\n        <pointLight position={[-4, 1, 5]} color="#9bdcff" intensity={0.7} />\n        <pointLight position={[3, -3, -2]} color="#38bdf8" intensity={0.35} />
 
-        <NeuralCloud />
+        <BrainModel activeColor={moodColor} />
+        <MindFace mood={mood} color={moodColor} />
 
         {connectomeData.lobes.map((lobe) => (
           <LobeNode
             key={lobe.id}
-            lobe={lobe as Lobe}
+            lobe={lobe as unknown as Lobe}
             onSelect={onSelectLobe}
             isActive={activeLobeId === lobe.id}
           />
