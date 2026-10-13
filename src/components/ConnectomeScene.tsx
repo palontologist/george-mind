@@ -38,7 +38,7 @@ function MindFace({ mood, color }: { mood?: ConnectomeSceneProps["mood"]; color:
   const happy = /smile|warmth|radiant|camaraderie|energy|euphoria/.test(emotion);
   const curious = /wonder|curious|contemplation|debugging|wanderlust/.test(emotion);
   const intense = /focus|grit|electric|raw/.test(emotion);
-  const skin = "#b97962";
+  // The reference uses a neutral robotic bust: keep the face sculptural and let the brain carry the color.\n  const skin = "#d9d5cc";
 
   useFrame((state) => {
     if (faceRef.current) {
@@ -52,19 +52,19 @@ function MindFace({ mood, color }: { mood?: ConnectomeSceneProps["mood"]; color:
       {/* Glass cranial shell: a translucent brain is visible through the upper skull. */}
       <mesh position={[0, 0.52, -0.05]} scale={[1.05, 1.1, 0.92]}>
         <sphereGeometry args={[1, 48, 32]} />
-        <meshPhysicalMaterial color="#9bdcff" transparent opacity={0.13} roughness={0.08} metalness={0.15} transmission={0.18} thickness={0.4} clearcoat={1} />
+        <meshPhysicalMaterial color="#e8e3d8" transparent opacity={0.22} roughness={0.2} metalness={0.05} transmission={0.08} thickness={0.6} clearcoat={1} />
       </mesh>
       <group position={[0, 0.5, -0.1]} scale={[0.9, 0.82, 0.72]}>
         {[-0.4, 0.4].map((x) => (
           <mesh key={x} position={[x, 0, 0]} scale={[0.85, 1, 1]} rotation={[0, x * 0.18, x * 0.12]}>
             <sphereGeometry args={[0.68, 32, 24]} />
-            <meshPhysicalMaterial color={color} emissive={color} emissiveIntensity={0.22} roughness={0.42} metalness={0.16} clearcoat={0.65} />
+            <meshPhysicalMaterial color="#d7d2c8" emissive={color} emissiveIntensity={0.08} roughness={0.58} metalness={0.04} clearcoat={0.4} />
           </mesh>
         ))}
         {[...Array(9)].map((_, i) => (
           <mesh key={i} position={[(i % 3 - 1) * 0.42, 0.15 + Math.floor(i / 3) * 0.2, 0.58]} rotation={[0, 0, (i % 2 ? 1 : -1) * 0.35]}>
             <torusGeometry args={[0.22, 0.025, 8, 24, Math.PI * 1.55]} />
-            <meshBasicMaterial color="#f6a6c8" transparent opacity={0.75} />
+            <meshBasicMaterial color={color} transparent opacity={0.6} />
           </mesh>
         ))}
       </group>
@@ -237,9 +237,7 @@ export default function ConnectomeScene({
   return (
     <div className="w-full h-full relative bg-[#09090b]">
       <Canvas camera={{ position: [0, 0, 6.2], fov: 45 }}>
-        <ambientLight intensity={0.4} />
-        <pointLight position={[10, 10, 10]} intensity={1.2} />
-        <pointLight position={[-10, -10, -10]} color="#38bdf8" intensity={0.8} />
+        <ambientLight intensity={0.65} />\n        <directionalLight position={[3, 5, 6]} intensity={2.2} color="#fff5e8" />\n        <pointLight position={[-4, 1, 5]} color="#9bdcff" intensity={0.7} />\n        <pointLight position={[3, -3, -2]} color="#38bdf8" intensity={0.35} />
 
         <NeuralCloud />
         <MindFace mood={mood} color={moodColor} />
