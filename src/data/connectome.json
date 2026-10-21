@@ -5,7 +5,7 @@
     "San Francisco",
     "New York"
   ],
-  "tagline": "Physical AI • Embodied Intelligence • Autonomous Systems",
+  "tagline": "Physical AI \u2022 Embodied Intelligence \u2022 Autonomous Systems",
   "podcastUrl": "https://youtube.com/@frontforumfocus",
   "lobes": [
     {
@@ -22,7 +22,7 @@
         "emotion": "Laser Focus & Flow State",
         "expression": "focus",
         "expressionLabel": "Brow locked, eyes narrowed, jaw set",
-        "aura": "Amber Pulse • 128 BPM",
+        "aura": "Amber Pulse \u2022 128 BPM",
         "thought": "Autoregression is too slow for physics. If you can't react in 10ms, you slip.",
         "thoughts": [
           "Autoregression is too slow for physics. If you can't react in 10ms, you slip.",
@@ -47,14 +47,14 @@
         {
           "title": "Muscle Memory (UniBot-V1)",
           "subtitle": "Looped-Transformer Instinct Layer",
-          "metrics": "17/32 Tasks Solved • Zero-Slip Contact Verification",
+          "metrics": "17/32 Tasks Solved \u2022 Zero-Slip Contact Verification",
           "repo": "https://github.com/palontologist/unibot-muscle-memory",
           "content": "Multi-task behavioral cloning policy utilizing a recurrent looped-transformer architecture for sub-10ms reactive manipulation and contact-verified grasping.",
           "mood": {
             "emotion": "Stubborn Pride",
             "expression": "focus",
             "expressionLabel": "Tight smile held back by concentration",
-            "aura": "Ember • 132 BPM",
+            "aura": "Ember \u2022 132 BPM",
             "thought": "32 tasks. 17 solved. I still think about the other 15 every time I open the eval script.",
             "thoughts": [
               "32 tasks. 17 solved. I still think about the other 15 every time I open the eval script.",
@@ -79,14 +79,14 @@
         {
           "title": "Fast & Curious",
           "subtitle": "JSAE Autonomous Driving AI Challenge",
-          "metrics": "43s Target Pace • Vehicle-Specific MPC",
+          "metrics": "43s Target Pace \u2022 Vehicle-Specific MPC",
           "repo": "https://github.com/palontologist/FastAndCurious",
           "content": "Model Predictive Control (MPC) tracking modules, ROS 2 sensor fusion (IMU/GNSS/LiDAR), and autonomous stuck-recovery supervisor for high-speed racing karts.",
           "mood": {
             "emotion": "Adrenaline & Trust",
             "expression": "energy",
             "expressionLabel": "Wide eyes, mouth open mid-countdown",
-            "aura": "Solar Flare • 140 BPM",
+            "aura": "Solar Flare \u2022 140 BPM",
             "thought": "Every controller that worked on the simulator betrayed me at corner three.",
             "thoughts": [
               "Every controller that worked on the simulator betrayed me at corner three.",
@@ -107,6 +107,37 @@
               0.752
             ]
           }
+        },
+        {
+          "title": "found 34",
+          "subtitle": "The Instinct Layer for Embodied AI",
+          "metrics": "Looped Transformer \u2022 <100ms Edge Inference \u2022 L4 Autonomy Roadmap",
+          "content": "Cognitive distillation engine that extracts expert heuristics into lightweight local weights running on edge hardware (Raspberry Pi 4B / Jetson). Three tiers: Perception (LocateAnything vision, Nemotron ASR audio) \u2192 Instinct (looped transformer routing labels to expert actions) \u2192 Actuation (Rust safety harness validating every command against joint limits and collision maps).",
+          "mood": {
+            "emotion": "Laser Focus & Flow State",
+            "expression": "focus",
+            "expressionLabel": "Brow locked, eyes narrowed, jaw set",
+            "aura": "Amber Pulse \u2022 128 BPM",
+            "thought": "A robot doesn't need a giant brain to be an expert; it needs the right instincts.",
+            "thoughts": [
+              "Current humanoids are either beige cloud LLMs or brittle scripted motion \u2014 found 34 is the third way.",
+              "Distilling expert DNA into edge-native heuristics for high-stakes autonomy.",
+              "Sub-10ms reflexive reaction beats autoregressive text tokens for contact physics."
+            ],
+            "notes": [
+              "latency or nothing",
+              "keep the loop closed",
+              "instinct layer running on Pi 4B / Jetson"
+            ]
+          },
+          "region": {
+            "label": "Instinct layer / M1",
+            "dir": [
+              0.734,
+              0.114,
+              0.669
+            ]
+          }
         }
       ]
     },
@@ -124,7 +155,7 @@
         "emotion": "Deep Contemplation & Debugging",
         "expression": "contemplation",
         "expressionLabel": "Chin down, eyes scanning, lips parted",
-        "aura": "Electric Cyan • 58 BPM",
+        "aura": "Electric Cyan \u2022 58 BPM",
         "thought": "When the compiler gives up, you have to go down to the silicon gates.",
         "thoughts": [
           "When the compiler gives up, you have to go down to the silicon gates.",
@@ -149,13 +180,13 @@
         {
           "title": "Hades-V",
           "subtitle": "32-bit Pipelined RISC-V Processor",
-          "metrics": "SystemVerilog • Custom Instruction Pipeline",
+          "metrics": "SystemVerilog \u2022 Custom Instruction Pipeline",
           "content": "From-scratch pipelined RISC-V processor implementing architectural hazard handling, forwarding units, and low-level execution efficiency.",
           "mood": {
             "emotion": "Quiet Pride & Patience",
             "expression": "contemplation",
             "expressionLabel": "Still, patient, one brow slightly raised",
-            "aura": "Cyan • 62 BPM",
+            "aura": "Cyan \u2022 62 BPM",
             "thought": "Writing it in SystemVerilog made me slow down in a way I needed to.",
             "thoughts": [
               "Writing it in SystemVerilog made me slow down in a way I needed to.",
@@ -180,14 +211,14 @@
         {
           "title": "Mobile Edge Assistant (MEA)",
           "subtitle": "On-Device Micro-Agents",
-          "metrics": "FunctionGemma 270M–1B • whisper.cpp • Zero Egress",
+          "metrics": "FunctionGemma 270M\u20131B \u2022 whisper.cpp \u2022 Zero Egress",
           "repo": "https://github.com/palontologist/mobile-1b-agent",
           "content": "Sub-3B micro-LLMs executing deterministic tool calling entirely on-device on commodity smartphones.",
           "mood": {
             "emotion": "Principled Defiance",
             "expression": "doubt",
             "expressionLabel": "One brow up, lips pressed",
-            "aura": "Ice • 86 BPM",
+            "aura": "Ice \u2022 86 BPM",
             "thought": "If my agent needs a round trip to know what a calendar is, it isn't mine.",
             "thoughts": [
               "If my agent needs a round trip to know what a calendar is, it isn't mine.",
@@ -197,7 +228,7 @@
             "notes": [
               "is a 270M model actually useful?",
               "zero egress or it isn't mine",
-              "whisper.cpp on a mid-range phone — surprisingly fine"
+              "whisper.cpp on a mid-range phone \u2014 surprisingly fine"
             ]
           },
           "region": {
@@ -212,14 +243,14 @@
         {
           "title": "Greta Productivity Engine",
           "subtitle": "Native Linux Daemon & Local Analytics",
-          "metrics": "Rust • Linux/Hyprland • SQLite • Tauri 2.0",
+          "metrics": "Rust \u2022 Linux/Hyprland \u2022 SQLite \u2022 Tauri 2.0",
           "repo": "https://github.com/palontologist/greta-productivity-agent",
           "content": "Native Rust engine tracking xprop window states and telemetry with zero cloud dependency.",
           "mood": {
             "emotion": "Calm Control",
             "expression": "neutral",
             "expressionLabel": "Relaxed, settled, faintly amused",
-            "aura": "Slate • 64 BPM",
+            "aura": "Slate \u2022 64 BPM",
             "thought": "I know what every window on my machine is doing. That feels less like surveillance and more like breathing.",
             "thoughts": [
               "I know what every window on my machine is doing. That feels less like surveillance and more like breathing.",
@@ -234,6 +265,37 @@
           },
           "region": {
             "label": "Frontal pole",
+            "dir": [
+              0.165,
+              -0.053,
+              -0.985
+            ]
+          }
+        },
+        {
+          "title": "gretaa",
+          "subtitle": "Impact Measurement App",
+          "metrics": "SDG Tracking \u2022 Economic \u2022 Social \u2022 Environmental \u2022 Time",
+          "content": "Expo / React Native impact measurement application. Scores initiatives across SDG-aligned dimensions (economic, social, environmental, time) with confidence normalization and monetary time valuation, built around an OMI adapter and rule engine.",
+          "mood": {
+            "emotion": "Calm Control",
+            "expression": "neutral",
+            "expressionLabel": "Relaxed, settled, faintly amused",
+            "aura": "Slate \u2022 64 BPM",
+            "thought": "Measuring impact shouldn't require a round trip to the cloud.",
+            "thoughts": [
+              "SDG-aligned impact scoring with economic, social, environmental, and time dimensions.",
+              "Confidence normalization and monetary time valuation built into the calculator.",
+              "Expo / React Native mobile app with local-first measurement."
+            ],
+            "notes": [
+              "omi adapter",
+              "sdg tracking",
+              "impact measurement"
+            ]
+          },
+          "region": {
+            "label": "Compute core / frontal pole",
             "dir": [
               0.165,
               -0.053,
@@ -257,7 +319,7 @@
         "emotion": "Radiant Smile & Shared Discovery",
         "expression": "joy",
         "expressionLabel": "Full Duchenne smile, eyes crinkled",
-        "aura": "Warm Magenta • 104 BPM",
+        "aura": "Warm Magenta \u2022 104 BPM",
         "thought": "The best technical insights come out when two builders drop their guard.",
         "thoughts": [
           "The best technical insights come out when two builders drop their guard.",
@@ -281,7 +343,7 @@
       "nodes": [
         {
           "title": "frontforumfocus Podcast",
-          "subtitle": "40+ Episodes • YouTube",
+          "subtitle": "40+ Episodes \u2022 YouTube",
           "metrics": "youtube.com/@frontforumfocus",
           "repo": "https://youtube.com/@frontforumfocus",
           "content": "Hosting 40+ conversations exploring the frontiers of robotics, embodied intelligence, climate tech telemetry, open hardware, and African builder ecosystems.",
@@ -289,7 +351,7 @@
             "emotion": "Warm Belonging",
             "expression": "warmth",
             "expressionLabel": "Head tilted, half-smile, soft eyes",
-            "aura": "Rose • 72 BPM",
+            "aura": "Rose \u2022 72 BPM",
             "thought": "Hosting taught me how to hear what someone hasn't said yet.",
             "thoughts": [
               "Hosting taught me how to hear what someone hasn't said yet.",
@@ -320,7 +382,7 @@
             "emotion": "Reverent Curiosity",
             "expression": "wonder",
             "expressionLabel": "Brows peaked, mouth slightly open",
-            "aura": "Orchid • 78 BPM",
+            "aura": "Orchid \u2022 78 BPM",
             "thought": "The people actually shipping the hardware are the most patient people I know.",
             "thoughts": [
               "The people actually shipping the hardware are the most patient people I know.",
@@ -358,7 +420,7 @@
         "emotion": "Electric Energy & Room Presence",
         "expression": "energy",
         "expressionLabel": "Chin up, brows high, mid-sentence",
-        "aura": "Solar Gold • 132 BPM",
+        "aura": "Solar Gold \u2022 132 BPM",
         "thought": "Culture is built by putting high-conviction builders in the same room.",
         "thoughts": [
           "Culture is built by putting high-conviction builders in the same room.",
@@ -383,13 +445,13 @@
         {
           "title": "Physical AI & Wearable Builder Salons",
           "subtitle": "San Francisco & New York (Corgi)",
-          "metrics": "Curated Hacker Salons • Hardware Demos",
+          "metrics": "Curated Hacker Salons \u2022 Hardware Demos",
           "content": "Gatherings bringing together robotics researchers, wearable pioneers (Omi, Rabbit), and AI agent architects.",
           "mood": {
             "emotion": "Generous Excitement",
             "expression": "joy",
             "expressionLabel": "Laughing, leaning in",
-            "aura": "Gold • 108 BPM",
+            "aura": "Gold \u2022 108 BPM",
             "thought": "A room where a wearable and a robot arm argue about latency is my favourite kind of room.",
             "thoughts": [
               "A room where a wearable and a robot arm argue about latency is my favourite kind of room.",
@@ -414,13 +476,13 @@
         {
           "title": "Startup Grind & CMX Nairobi",
           "subtitle": "Chapter Leadership & Builder Programs",
-          "metrics": "1,000+ Builders • ClawCamp Hackathons",
+          "metrics": "1,000+ Builders \u2022 ClawCamp Hackathons",
           "content": "Ecosystem leadership designing high-engagement technical bootcamps, pitch cohorts, and institutional partner bridges (Zoho, ETHGlobal).",
           "mood": {
             "emotion": "Fierce Investment",
             "expression": "focus",
             "expressionLabel": "Eyes locked on, chin forward",
-            "aura": "Brass • 124 BPM",
+            "aura": "Brass \u2022 124 BPM",
             "thought": "Nairobi doesn't need more people told to wait. It needs rooms with hardware on the table.",
             "thoughts": [
               "Nairobi doesn't need more people told to wait. It needs rooms with hardware on the table.",
@@ -430,7 +492,7 @@
             "notes": [
               "1,000 builders and still hungry",
               "no more 'wait your turn' rooms",
-              "Zoho + ETHGlobal showed up — that changed things"
+              "Zoho + ETHGlobal showed up \u2014 that changed things"
             ]
           },
           "region": {
@@ -458,7 +520,7 @@
         "emotion": "Raw Grit & Exhausted Euphoria",
         "expression": "grit",
         "expressionLabel": "Narrowed eyes, heavy breath, lifted mouth",
-        "aura": "Crimson Blaze • 148 BPM",
+        "aura": "Crimson Blaze \u2022 148 BPM",
         "thought": "Your mind wants to stop at 40%. The legs keep moving regardless.",
         "thoughts": [
           "Your mind wants to stop at 40%. The legs keep moving regardless.",
@@ -488,7 +550,7 @@
             "emotion": "Intense Focus",
             "expression": "focus",
             "expressionLabel": "Narrowed, locked on the apex",
-            "aura": "Crimson • 130 BPM",
+            "aura": "Crimson \u2022 130 BPM",
             "thought": "Grip limits don't care what the model predicted. Neither should my controller.",
             "thoughts": [
               "Grip limits don't care what the model predicted. Neither should my controller.",
@@ -526,7 +588,7 @@
         "emotion": "Wanderlust & Jet-Lagged Wonder",
         "expression": "wonder",
         "expressionLabel": "Brows peaked, looking past you",
-        "aura": "Astral Purple • 76 BPM",
+        "aura": "Astral Purple \u2022 76 BPM",
         "thought": "Between Nairobi, SF, and New York, home is where the workbench is.",
         "thoughts": [
           "Between Nairobi, SF, and New York, home is where the workbench is.",
@@ -556,7 +618,7 @@
             "emotion": "Rooted Certainty",
             "expression": "warmth",
             "expressionLabel": "Settled, faintly smiling",
-            "aura": "Violet • 70 BPM",
+            "aura": "Violet \u2022 70 BPM",
             "thought": "This is where everything gets built before it gets polished anywhere else.",
             "thoughts": [
               "This is where everything gets built before it gets polished anywhere else.",
@@ -586,7 +648,7 @@
             "emotion": "Restless Ambition",
             "expression": "energy",
             "expressionLabel": "Alert, scanning the room",
-            "aura": "Indigo • 118 BPM",
+            "aura": "Indigo \u2022 118 BPM",
             "thought": "Everything here is one funding round from being interesting. That keeps me sharp.",
             "thoughts": [
               "Everything here is one funding round from being interesting. That keeps me sharp.",
@@ -616,7 +678,7 @@
             "emotion": "Playful Fascination",
             "expression": "joy",
             "expressionLabel": "Amused, one brow up",
-            "aura": "Orchid • 104 BPM",
+            "aura": "Orchid \u2022 104 BPM",
             "thought": "If it's ambient and it disappears into your day, it's not a gadget yet.",
             "thoughts": [
               "If it's ambient and it disappears into your day, it's not a gadget yet.",
@@ -654,7 +716,7 @@
         "emotion": "Candid Warmth & Camaraderie",
         "expression": "warmth",
         "expressionLabel": "Head tilted, unguarded half-smile",
-        "aura": "Emerald Warmth • 68 BPM",
+        "aura": "Emerald Warmth \u2022 68 BPM",
         "thought": "Everything worthwhile was built with good friends in messy rooms.",
         "thoughts": [
           "Everything worthwhile was built with good friends in messy rooms.",
@@ -684,7 +746,7 @@
             "emotion": "Loyal Gratitude",
             "expression": "warmth",
             "expressionLabel": "Open, grateful, relaxed",
-            "aura": "Jade • 66 BPM",
+            "aura": "Jade \u2022 66 BPM",
             "thought": "None of this was solo. Not one line of it.",
             "thoughts": [
               "None of this was solo. Not one line of it.",
@@ -733,8 +795,8 @@
     {
       "id": "builder-salon-series",
       "title": "Physical AI & Wearable Builder Salons",
-      "subtitle": "Curated hacker salons · hardware demos",
-      "metrics": "Robotics researchers · wearable pioneers · agent architects",
+      "subtitle": "Curated hacker salons \u00b7 hardware demos",
+      "metrics": "Robotics researchers \u00b7 wearable pioneers \u00b7 agent architects",
       "region": {
         "label": "Dorsolateral PFC",
         "dir": [
@@ -743,12 +805,12 @@
           0.584
         ]
       },
-      "content": "A recurring salon bringing together robotics researchers, wearable pioneers and AI agent architects. No slides — hardware on the table, and the disagreements are the point.",
+      "content": "A recurring salon bringing together robotics researchers, wearable pioneers and AI agent architects. No slides \u2014 hardware on the table, and the disagreements are the point.",
       "mood": {
         "emotion": "Joy",
         "expression": "joy",
         "expressionLabel": "Joy",
-        "aura": "Bright · 104 BPM",
+        "aura": "Bright \u00b7 104 BPM",
         "thought": "A room where a wearable and a robot arm argue about latency is my favourite kind of room.",
         "thoughts": [
           "A room where a wearable and a robot arm argue about latency is my favourite kind of room.",
@@ -765,8 +827,8 @@
     {
       "id": "cmx-nairobi",
       "title": "Startup Grind & CMX Nairobi",
-      "subtitle": "Technical bootcamps · pitch cohorts · institutional bridges",
-      "metrics": "1,000+ builders · ClawCamp hackathons · Zoho, ETHGlobal",
+      "subtitle": "Technical bootcamps \u00b7 pitch cohorts \u00b7 institutional bridges",
+      "metrics": "1,000+ builders \u00b7 ClawCamp hackathons \u00b7 Zoho, ETHGlobal",
       "region": {
         "label": "Broca's area",
         "dir": [
@@ -780,7 +842,7 @@
         "emotion": "Focus",
         "expression": "focus",
         "expressionLabel": "Focus",
-        "aura": "Amber · 128 BPM",
+        "aura": "Amber \u00b7 128 BPM",
         "thought": "Nairobi doesn't need more people told to wait. It needs rooms with hardware on the table.",
         "thoughts": [
           "Nairobi doesn't need more people told to wait. It needs rooms with hardware on the table.",
@@ -806,12 +868,12 @@
           0.72
         ]
       },
-      "content": "Multi-day build sprints where teams prototype physical systems end to end — and the demo has to move.",
+      "content": "Multi-day build sprints where teams prototype physical systems end to end \u2014 and the demo has to move.",
       "mood": {
         "emotion": "Energy",
         "expression": "energy",
         "expressionLabel": "Energy",
-        "aura": "Gold · 132 BPM",
+        "aura": "Gold \u00b7 132 BPM",
         "thought": "Nothing exposes a bad architecture like a clock.",
         "thoughts": [
           "Nothing exposes a bad architecture like a clock.",
@@ -837,12 +899,12 @@
           0.578
         ]
       },
-      "content": "A live cut of the podcast — operators building real infrastructure, answering questions in the room instead of over email.",
+      "content": "A live cut of the podcast \u2014 operators building real infrastructure, answering questions in the room instead of over email.",
       "mood": {
         "emotion": "Warmth",
         "expression": "warmth",
         "expressionLabel": "Warmth",
-        "aura": "Green · 70 BPM",
+        "aura": "Green \u00b7 70 BPM",
         "thought": "Answering a question live is the only honest way to find out if you actually know the thing.",
         "thoughts": [
           "Answering a question live is the only honest way to find out if you actually know the thing.",
