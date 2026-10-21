@@ -20,6 +20,8 @@ export interface MindItem {
   subtitle: string;
   metrics?: string;
   repo?: string;
+  /** Luma page for an event. Events only — projects get a repo. */
+  luma?: string;
   content: string;
   /** Where this lights up on the brain. */
   region: Region;
@@ -135,6 +137,7 @@ function events(): MindItem[] {
       subtitle: event.subtitle ?? "",
       metrics: event.metrics,
       repo: event.repo,
+      luma: event.luma,
       content: event.content,
       region: event.region ?? { label: "Frontal association", dir: [0.45, 0.55, 0.72] },
       mood: event.mood ?? data.lobes[0].mood,

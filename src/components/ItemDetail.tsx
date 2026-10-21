@@ -114,12 +114,26 @@ export default function ItemDetail({
         </div>
 
         <div className="mt-7 flex flex-wrap gap-3">
+          {item.luma ? (
+            <a
+              href={item.luma}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="label rounded-[6px] bg-[var(--accent)] px-4 py-2.5 text-white transition-colors duration-200 hover:opacity-90"
+            >
+              Luma ↗
+            </a>
+          ) : null}
           {item.repo ? (
             <a
               href={item.repo.startsWith("http") ? item.repo : `https://${item.repo}`}
               target="_blank"
               rel="noreferrer noopener"
-              className="label rounded-[6px] bg-[var(--accent)] px-4 py-2.5 text-white transition-colors duration-200 hover:opacity-90"
+              className={`label rounded-[6px] px-4 py-2.5 transition-colors duration-200 ${
+                item.luma
+                  ? "border border-line text-ink hover:border-line-strong"
+                  : "bg-[var(--accent)] text-white hover:opacity-90"
+              }`}
             >
               Source
             </a>

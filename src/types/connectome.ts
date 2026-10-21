@@ -65,6 +65,8 @@ export interface Kind {
 /** An event George has hosted. Same shape as a project node. */
 export interface EventItem extends ProjectNode {
   id: string;
+  /** The Luma page for this event, if it was published there. */
+  luma?: string;
 }
 
 export interface Connectome {
