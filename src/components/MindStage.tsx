@@ -5,7 +5,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 import MindFace, { useHeadModel, HEAD_MODEL_URL } from "./MindFace";
-import { createMindState, useMindDriver, type MindState } from "../lib/useMindDriver";
+import { EXPRESSIONS } from "../lib/expressions";
+import { createMindState, type MindState } from "../lib/useMindDriver";
 import { createWorldRefs, type WorldRefs } from "../lib/world";
 import type { ExpressionKey } from "../lib/expressions";
 
@@ -32,21 +33,22 @@ import type { ExpressionKey } from "../lib/expressions";
  * `FRAME_W` the fraction of its width — whichever binds first wins, so an
  * ultrawide gets a monumental crop and a phone still gets a whole head.
  */
-const FRAME_H = 0.95;
-const FRAME_W = 0.8;
+const FRAME_H = 1.18;
+const FRAME_W = 1.05;
 /**
  * The head sits slightly above the centre of the frame. The model's bounds
  * carry a neck below the chin, so the geometric centre of the head is lower
  * than the centre of the face — aiming at the bounds puts the jaw off the
  * bottom edge.
  */
-const FACE_Y = 0.03;
+const FACE_X = 0.16;
+const FACE_Y = 0.02;
 /**
  * How much of the expression's authored head pose to keep. The presets roll
  * and yaw up to ~20 degrees, which reads as character in a close-up and as
  * "broken" when you are trying to read the expression.
  */
-const UPRIGHT = 0.3;
+const UPRIGHT = 0.12;
 
 interface MindStageProps {
   emotion: ExpressionKey;
@@ -105,9 +107,11 @@ function Contents({
   const face = useRef<THREE.Group>(null);
   const box = useMemo(() => new THREE.Box3(), []);
 
-  // Blinks, saccades, breathing, and the emotion settling in. These live in
-  // the expression vector, not in the head's transform.
-  useMindDriver(mind, emotionRef);
+  // Keep the portrait static: pin to the neutral expression with no idle motion.
+  useEffect(() => {
+    mind.current.expression = { ...EXPRESSIONS.neutral };
+    mind.current.settle = 1;
+  }, [mind]);
 
   // The head's own height at unit scale. Measured once per model/resize,
   // because it is a property of the .glb, not of the frame.
@@ -121,9 +125,9 @@ function Contents({
   // Park the gaze straight ahead, once. No pointer parallax — the head holds
   // a single point and only its expression changes.
   useEffect(() => {
-    refs.current.lookAt.set(0, viewport.height * FACE_Y, -2.4);
+    refs.current.lookAt.set(viewport.width * FACE_X, viewport.height * FACE_Y, -2.4);
     // Re-park on resize so a layout change never leaves it aimed sideways.
-  }, [refs, viewport.height]);
+  }, [refs, viewport.width, viewport.height]);
 
   useFrame((_, delta) => {
     const f = face.current;
@@ -148,7 +152,7 @@ function Contents({
 
   return (
     <>
-      <group position={[0, viewport.height * FACE_Y, 0]}>
+      <group position={[viewport.width * FACE_X, viewport.height * FACE_Y, 0]}>
         <group ref={face}>
           <MindFace mind={mind} refs={refs} modelUrl={modelUrl} upright={UPRIGHT} still />
         </group>

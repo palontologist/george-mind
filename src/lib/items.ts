@@ -22,6 +22,12 @@ export interface MindItem {
   repo?: string;
   /** Luma page for an event. Events only — projects get a repo. */
   luma?: string;
+  /** Optional proof/demo media shown in project detail. */
+  media?: {
+    type: "video";
+    src: string;
+    label?: string;
+  };
   content: string;
   /** Where this lights up on the brain. */
   region: Region;
@@ -96,6 +102,7 @@ function toItem(
     subtitle: node.subtitle ?? "",
     metrics: node.metrics,
     repo: node.repo,
+    media: node.media,
     content: node.content,
     region: node.region ?? lobe.region ?? { label: lobe.tag, dir: [0, 1, 0] },
     mood: node.mood ?? lobe.mood,

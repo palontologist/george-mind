@@ -67,6 +67,23 @@ export default function ItemDetail({
 
         <p className="mt-5 text-[15px] leading-relaxed text-ink-2">{item.content}</p>
 
+        {item.media?.type === "video" ? (
+          <div className="mt-6 overflow-hidden rounded-[12px] border border-line bg-black/20">
+            <div className="border-b border-line px-4 py-3">
+              <span className="label-quiet">{item.media.label ?? "Proof of work"}</span>
+            </div>
+            <video
+              className="aspect-video w-full bg-black"
+              controls
+              preload="metadata"
+              playsInline
+              src={item.media.src}
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        ) : null}
+
         {/* How it felt */}
         <div className="glass mt-7 p-5">
           <div className="flex items-baseline justify-between gap-3">

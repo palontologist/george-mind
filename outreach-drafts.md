@@ -5,6 +5,27 @@
 **Ask:** 10–30 hardware units · 1 engineer × 90 min · swag
 **Reveal only if asked:** "We can cover dinner and transport for your engineer, and we have a modest budget if that helps."
 
+## Canonical dates — SF Luma page still needs fixing (checked 2026-10-21)
+
+| | Event | Date | Day | Time | Luma |
+|---|---|---|---|---|---|
+| NYC | Not So Boring AI | **Nov 5, 2026** | Thursday | 6:00–8:00 PM EST | `luma.com/trwqymvi` |
+| SF | Agent Building & Founder Networking Salon | **Nov 12, 2026** | Thursday | 6:00–8:00 PM PST | `luma.com/l67727uo` |
+
+SF venue: Corgi Cafe, 9 Claude Ln, San Francisco, CA 94108
+NYC venue: **TBD — no address on the Luma page yet. Lock this before pitching.**
+
+> ⚠️ **The Luma page for the SF event currently shows Nov 11.** The real date is Nov 12 and that's what everyone has been told — the Luma event needs to be edited. Do that first: every draft below quotes the date, Luma's calendar links and notifications are currently pointing at the wrong day, and Nov 11 is a federal holiday.
+
+**Verify before sending:** `grep -n "Nov [0-9]" outreach-drafts.md sponsor-leads.csv`
+
+### Nov 12 (Thursday) sits the day after Veterans Day
+Nov 11, 2026 is Veterans Day. Most companies observe it that Wednesday, so Thursday Nov 12 is a normal full workday — a good slot for a 6pm event. Expect sponsor engineers to be slower to reply that whole week, so pitch ahead of it.
+
+### Selling point: the two dates are exactly one week apart
+A sponsor can cover both cities in one trip. Lead with the bundle:
+> "NYC Nov 5 and SF Nov 12 — exactly one week apart, one coast to the other. Sponsor both and your engineer is in the room in both cities."
+
 ---
 
 ## Rules
@@ -23,7 +44,7 @@
 >
 > Would you be open to sharing it with the chapter? I can give your members first access before the public Luma link, and shout out any builder who demos.
 >
-> Happy to cross-post to the SF chapter too — I've got a matching event Nov 12.
+> Happy to cross-post to the SF chapter too — I've got a matching event Nov 11.
 >
 > [link]
 
@@ -31,7 +52,7 @@
 
 ## P1 — PCBWay
 
-> Hi — I'm organizing two on-device AI builder events in Nov (NYC Nov 5, SF Nov 12), each with a hands-on hardware segment where attendees build and demo working sensor-to-action projects.
+> Hi — I'm organizing two on-device AI builder events in Nov (NYC Nov 5, SF Nov 11), each with a hands-on hardware segment where attendees build and demo working sensor-to-action projects.
 >
 > I saw you support competition PCBs and that event boards may be fully free. Would PCBWay consider credits or boards for the hardware demos? Both events are hands-on by design, so the boards would get genuinely used, not just displayed.
 >
@@ -43,7 +64,7 @@
 
 ## P1 — ElevenLabs
 
-> Hi — running two hands-on AI builder events in November (NYC Nov 5, SF Nov 12), ~50 screened builders each, focused on on-device and wearable AI.
+> Hi — running two hands-on AI builder events in November (NYC Nov 5, SF Nov 11), ~50 screened builders each, focused on on-device and wearable AI.
 >
 > I saw the ElevenLabs hackathon program gives every participant free Creator-tier access and Pro codes for winners. That model would work perfectly for us — voice is core to the wearable demos.
 >
@@ -67,7 +88,7 @@
 
 > Your DevRel post mentioned partnering with hackathon organizers to make LFMs the obvious choice for builders who care about latency and on-device cost — I'd like to do exactly that.
 >
-> I'm running two on-device AI nights in November (NYC Nov 5, SF Nov 12), ~50 builders each, with a hands-on hardware segment and lightning demos. I'd love LFM2.5 actually running on people's own laptops rather than in a slide.
+> I'm running two on-device AI nights in November (NYC Nov 5, SF Nov 11), ~50 builders each, with a hands-on hardware segment and lightning demos. I'd love LFM2.5 actually running on people's own laptops rather than in a slide.
 >
 > Would a maintainer plus some swag be doable? Happy to cover dinner and transport.
 
@@ -75,7 +96,7 @@
 
 ## P2 — Ollama
 
-> Running two on-device AI nights in Nov (NYC Nov 5, SF Nov 12). A big chunk of the agenda is getting models running locally on whatever laptop people bring, plus a hardware petting zoo.
+> Running two on-device AI nights in Nov (NYC Nov 5, SF Nov 11). A big chunk of the agenda is getting models running locally on whatever laptop people bring, plus a hardware petting zoo.
 >
 > Your "Ollama and Friends" format is basically what I'm building. Would you send a maintainer for a lightning demo plus stickers/keychains? Happy to feature it on the Luma page and write it up afterward.
 >
@@ -85,7 +106,7 @@
 
 ## P2 — Espressif
 
-> Hi — running on-device AI builder events in SF (Nov 12) and NYC (Nov 5), with a hands-on hardware segment and sensor-to-action demos.
+> Hi — running on-device AI builder events in SF (Nov 11) and NYC (Nov 5), with a hands-on hardware segment and sensor-to-action demos.
 >
 > I saw you sponsored NUS Hack&Roll with the ESP32-C3 badge — that's exactly the play I want. Would ESP32-S3 DevKits be possible for the demo tables?
 >
@@ -97,7 +118,7 @@
 
 ## P2 — Nexa AI
 
-> Congrats on the Qualcomm on-device bounty — the Hexagon NPU + NexaSDK angle lines up with exactly what my Nov events are about (NYC Nov 5, SF Nov 12).
+> Congrats on the Qualcomm on-device bounty — the Hexagon NPU + NexaSDK angle lines up with exactly what my Nov events are about (NYC Nov 5, SF Nov 11).
 >
 > ~50 screened builders, hands-on demos, no pitch decks. Would you want to put hardware or credits into builders' hands? Happy to run a bounty-style prize alongside it.
 >
@@ -117,13 +138,13 @@
 
 > Saw the "turn a vintage toy into a voice agent" hardware hackathon you ran in SF — that format is almost identical to what I'm putting together.
 >
-> I'm running on-device AI builder events in NYC (Nov 5) and SF (Nov 12), both with hands-on hardware segments. Would you want to sponsor or co-host a voice session? Happy to cover dinner and transport for an engineer.
+> I'm running on-device AI builder events in NYC (Nov 5) and SF (Nov 11), both with hands-on hardware segments. Would you want to sponsor or co-host a voice session? Happy to cover dinner and transport for an engineer.
 
 ---
 
 ## P3 — Devnovate (SF co-organizer)
 
-> I'm running an agent-building and physical AI salon in SF on Nov 12 — lightning demos plus a hardware segment, ~50 builders, already at capacity.
+> I'm running an agent-building and physical AI salon in SF on Nov 11 — lightning demos plus a hardware segment, ~50 builders, already at capacity.
 >
 > Saw you ran Embedded SF with ESP32 boards and cloud GPUs provided. Would you be open to co-organizing or lending boards? If it's easier, I'm also happy to cross-promote.
 >
@@ -133,7 +154,7 @@
 
 ## P3 — Bond AI (route to Google)
 
-> I'm running on-device AI events in NYC Nov 5 and SF Nov 12 and would love to build something Gemma-shaped around them.
+> I'm running on-device AI events in NYC Nov 5 and SF Nov 11 and would love to build something Gemma-shaped around them.
 >
 > You organized Build with Gemma NYC and I know the Gemma team has an active on-device hackathon playbook. Would you be open to a quick call about whether there's a fit on our side?
 >
@@ -143,7 +164,7 @@
 
 ## P4 — PyTorch Foundation
 
-> Running two on-device AI builder events (NYC Nov 5, SF Nov 12) focused on ExecuTorch-style edge deployment — wearables, sensor-to-action demos, lightning demos.
+> Running two on-device AI builder events (NYC Nov 5, SF Nov 11) focused on ExecuTorch-style edge deployment — wearables, sensor-to-action demos, lightning demos.
 >
 > I'd like to submit both to the community events calendar. Separately, is there any interest in supporting them given ExecuTorch is now a PyTorch Core project?
 >

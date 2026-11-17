@@ -22,12 +22,12 @@ import type { WorldRefs } from "../lib/world";
 /* ------------------------------------------------------------------ */
 
 /**
- * Drop your head model at /public/models/facecap.glb and it is picked
+ * Drop your head model at /public/models/meshy-model.glb and it is picked
  * up automatically. Until (and unless) that file is actually reachable,
  * a fully expressive procedural head renders instead — so a missing asset
  * degrades the look, never the experience.
  */
-export const HEAD_MODEL_URL = "/models/facecap.glb";
+export const HEAD_MODEL_URL = "/models/meshy-model.glb";
 
 /** Substrings that identify the head node inside a full-body rig. */
 const HEAD_HINTS = ["head", "face", "skull", "biped_head", "mdl_head"];

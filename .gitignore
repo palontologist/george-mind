@@ -33,3 +33,5 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+# Large local 3D assets (GitHub >100MB limit)
+public/models/meshy-model.glb

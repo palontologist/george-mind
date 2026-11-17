@@ -49,6 +49,11 @@
           "subtitle": "Looped-Transformer Instinct Layer",
           "metrics": "17/32 Tasks Solved \u2022 Zero-Slip Contact Verification",
           "repo": "https://github.com/palontologist/unibot-muscle-memory",
+          "media": {
+            "type": "video",
+            "src": "/media/organize_bookshelf.mp4",
+            "label": "Proof: Unitree organizing bookshelf"
+          },
           "content": "Multi-task behavioral cloning policy utilizing a recurrent looped-transformer architecture for sub-10ms reactive manipulation and contact-verified grasping.",
           "mood": {
             "emotion": "Stubborn Pride",
@@ -136,6 +141,38 @@
               0.734,
               0.114,
               0.669
+            ]
+          }
+        },
+        {
+          "title": "Horror Chess",
+          "subtitle": "Playable chess horror experience",
+          "metrics": "Spawn \u2022 Browser Playable",
+          "repo": "https://www.spawn.co/@palontologist/horror-chess/play",
+          "content": "A chess horror game released on Spawn, blending classic board tension with unsettling atmosphere and interactive play in the browser.",
+          "mood": {
+            "emotion": "Playful Dread",
+            "expression": "focus",
+            "expressionLabel": "Locked in, a grin under tension",
+            "aura": "Ember \u2022 120 BPM",
+            "thought": "Chess is already a horror game if you care enough about the position.",
+            "thoughts": [
+              "Chess is already a horror game if you care enough about the position.",
+              "I wanted the board to feel like it was looking back.",
+              "Every move is a small commitment to dread."
+            ],
+            "notes": [
+              "browser playable",
+              "tension in every move",
+              "horror in the position"
+            ]
+          },
+          "region": {
+            "label": "Motor planning / M1",
+            "dir": [
+              0.52,
+              0.22,
+              0.82
             ]
           }
         }
@@ -765,6 +802,69 @@
               -0.228,
               -0.567,
               0.792
+            ]
+          }
+        },
+        {
+          "title": "SoundCloud Release",
+          "subtitle": "Original music release",
+          "metrics": "SoundCloud \u2022 Single",
+          "repo": "https://on.soundcloud.com/vVYPKTsH1TPxrNCxax",
+          "content": "A song released on SoundCloud \u2014 another way of building and sharing outside code and hardware.",
+          "mood": {
+            "emotion": "Creative Ease",
+            "expression": "warmth",
+            "expressionLabel": "Relaxed, open, listening",
+            "aura": "Jade \u2022 72 BPM",
+            "thought": "Sometimes the cleanest thing I ship in a week is a sound.",
+            "thoughts": [
+              "Sometimes the cleanest thing I ship in a week is a sound.",
+              "Music is a different kind of system design.",
+              "Putting it out matters more than polishing it forever."
+            ],
+            "notes": [
+              "released on SoundCloud",
+              "different medium, same impulse",
+              "ship the sound"
+            ]
+          },
+          "region": {
+            "label": "Auditory / limbic",
+            "dir": [
+              -0.4,
+              -0.3,
+              0.86
+            ]
+          }
+        },
+        {
+          "title": "Short Film",
+          "subtitle": "In development",
+          "metrics": "Short Film \u2022 Upcoming",
+          "content": "An upcoming short film in early development \u2014 exploring story, visuals, and production. Details, collaborators, and release links to be added as it takes shape.",
+          "mood": {
+            "emotion": "Anticipation & Focus",
+            "expression": "wonder",
+            "expressionLabel": "Looking ahead, curious and intent",
+            "aura": "Orchid \u2022 80 BPM",
+            "thought": "A short film is a tight system: light, sound, timing, and people all in one loop.",
+            "thoughts": [
+              "A short film is a tight system: light, sound, timing, and people all in one loop.",
+              "Right now it's fragments \u2014 soon it'll need a spine.",
+              "Building toward the first cut."
+            ],
+            "notes": [
+              "in development",
+              "story and visuals taking shape",
+              "details soon"
+            ]
+          },
+          "region": {
+            "label": "Prefrontal / imagination",
+            "dir": [
+              -0.18,
+              0.62,
+              0.76
             ]
           }
         }

@@ -34,6 +34,12 @@ export interface ProjectNode {
   subtitle: string;
   metrics?: string;
   repo?: string;
+  /** Optional proof/demo media shown in project detail. */
+  media?: {
+    type: "video";
+    src: string;
+    label?: string;
+  };
   content: string;
   mood?: Mood;
   /** Where this project lights up on the brain. Falls back to the lobe's. */
