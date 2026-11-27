@@ -246,6 +246,38 @@
           }
         },
         {
+          "title": "Fused CPU-GPU on RISC-V (unified-rvv-gpu)",
+          "subtitle": "Unified RVV Architecture Research & Prototype",
+          "metrics": "PARMA-DITAM 2027 Draft \u2022 RISC-V + RVV \u2022 SIMT + Custom Extensions",
+          "repo": "https://github.com/palontologist/unified-rvv-gpu",
+          "content": "Independent research project exploring a unified CPU-GPU architecture on RISC-V: one ISA and memory model for scalar control and parallel/vector compute. Includes a PARMA-DITAM 2027 draft paper, architecture notes, and a portable runtime/codegen scaffold targeting RTL simulation, FPGA bring-up, and bandwidth-aware co-design on constrained hardware.",
+          "mood": {
+            "emotion": "Conviction & Curiosity",
+            "expression": "focus",
+            "expressionLabel": "Focused, forward-leaning, eyes set",
+            "aura": "Cyan \u2022 118 BPM",
+            "thought": "CPU and GPU shouldn't need different languages just to share the same memory.",
+            "thoughts": [
+              "CPU and GPU shouldn't need different languages just to share the same memory.",
+              "Unified memory is easy to say; coalescing, caching, and bandwidth discipline are where it gets real.",
+              "If the ISA can express both control and parallel work, the software stack gets simpler."
+            ],
+            "notes": [
+              "one ISA, one memory model",
+              "bandwidth is the real constraint",
+              "coalesce first, then scale"
+            ]
+          },
+          "region": {
+            "label": "Parietal association",
+            "dir": [
+              -0.22,
+              0.34,
+              -0.91
+            ]
+          }
+        },
+        {
           "title": "Mobile Edge Assistant (MEA)",
           "subtitle": "On-Device Micro-Agents",
           "metrics": "FunctionGemma 270M\u20131B \u2022 whisper.cpp \u2022 Zero Egress",
