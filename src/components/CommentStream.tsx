@@ -52,14 +52,13 @@ export default function CommentStream({
           <motion.p
             key={`${resetKey}-${offset}-${i}`}
             data-note
-            initial={{ opacity: 0, y: 14, scale: 0.96 }}
-            animate={{ opacity: 1 - i * 0.26, y: 0, scale: 1 - i * 0.03 }}
-            exit={{ opacity: 0, y: -16, scale: 0.97 }}
+            initial={{ opacity: 0, y: 14, scale: 0.96, filter: "blur(4px)" }}
+            animate={{ opacity: 1 - i * 0.28, y: 0, scale: 1 - i * 0.03, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -16, scale: 0.97, filter: "blur(4px)" }}
             transition={{ duration: 0.55, ease: [0.2, 0.7, 0.2, 1] }}
-            className="max-w-[min(30rem,90vw)] rounded-full border px-4 py-2 text-center text-[12px] leading-snug text-ink backdrop-blur-md sm:text-[13px]"
+            className="max-w-[min(28rem,88vw)] rounded-full border border-white/10 px-4 py-2 text-center text-[12px] leading-snug text-ink-2 shadow-[0_8px_32px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:text-[13px]"
             style={{
-              borderColor: "var(--line)",
-              backgroundColor: "rgba(21,23,28,0.72)",
+              backgroundColor: "rgba(17,19,24,0.62)",
             }}
           >
             {note}

@@ -3,39 +3,50 @@
 @tailwind utilities;
 
 /**
- * Palette and type scale, taken from anushhkathakur.com — Hanken Grotesk,
- * a single warm accent, and glass surfaces over a near-black warm ground.
- * Chrome uses the accent; the per-item colours in the data stay reserved for
- * data (strain bars, mood readouts) so the interface doesn't turn into a
- * rainbow.
+ * Visual system — cinematic dark, warm accent, editorial type.
+ * Inspired by immersive portfolio experiences: the face is the hero,
+ * the interface stays quiet and confident around it.
  */
 
 :root {
   color-scheme: dark;
 
-  /* Ground */
-  --background: #15171c;
-  --surface: #1c1f26;
-  --surface-raised: #23262e;
+  /* Ground — deep warm black with layered depth */
+  --background: #111318;
+  --background-deep: #0c0e12;
+  --surface: #181b21;
+  --surface-raised: #1f232b;
+  --surface-overlay: rgba(17, 19, 24, 0.72);
 
   /* Ink */
-  --foreground: #f2f0ed;
-  --ink-secondary: #c8c4be;
-  --ink-tertiary: #9a958f;
+  --foreground: #f3f1ee;
+  --ink-secondary: #cbc7c1;
+  --ink-tertiary: #8f8a84;
+  --ink-muted: #605c58;
 
-  /* Accent — the brand's control colour */
-  --accent: #c9452c;
-  --accent-soft: #c9452c26;
+  /* Accent — warm signal red */
+  --accent: #d4522f;
+  --accent-bright: #e4633f;
+  --accent-soft: rgba(212, 82, 47, 0.14);
+  --accent-glow: rgba(212, 82, 47, 0.28);
 
   /* Hairlines and glass */
-  --line: #ffffff14;
-  --line-strong: #ffffff2b;
-  --glass: #ffffff0d;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --line-accent: rgba(212, 82, 47, 0.35);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-strong: rgba(255, 255, 255, 0.07);
 
   --radius-glass: 20px;
+  --radius-sm: 8px;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--background);
 }
 
 body {
@@ -43,6 +54,20 @@ body {
   background: var(--background);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle cinematic grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
@@ -55,32 +80,70 @@ body {
   outline-offset: 2px;
 }
 
+/* Refined scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
 @layer components {
-  /* The label convention: small, uppercase, wide tracking, accent. */
+  /* Label convention: small, uppercase, wide tracking */
   .label {
     font-size: 11px;
     line-height: 1.1;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
   }
 
   .label-quiet {
-    font-size: 11.5px;
+    font-size: 11px;
     line-height: 1.2;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    color: var(--ink-secondary);
+    color: var(--ink-tertiary);
   }
 
-  /* Glass panel — the surface treatment the brand is built on. */
+  /* Glass panel */
   .glass {
     background: var(--glass);
     border: 1px solid var(--line);
     border-radius: var(--radius-glass);
-    backdrop-filter: blur(28px) saturate(180%);
-    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+  }
+
+  .glass-strong {
+    background: var(--glass-strong);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-glass);
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+  }
+
+  /* Section heading treatment */
+  .display-title {
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+    text-wrap: balance;
+  }
+
+  /* Ambient vignette for 3D stages */
+  .stage-vignette {
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 45%, transparent 0%, rgba(12, 14, 18, 0.18) 55%, rgba(12, 14, 18, 0.62) 100%);
   }
 }
 

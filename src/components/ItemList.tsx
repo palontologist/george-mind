@@ -31,8 +31,8 @@ export default function ItemList({
   }
 
   return (
-    <ul className="divide-y divide-line">
-      {items.map((item) => {
+    <ul className="space-y-1">
+      {items.map((item, index) => {
         const active = item.id === selectedId;
         return (
           <li key={item.id}>
@@ -44,42 +44,51 @@ export default function ItemList({
               onMouseLeave={() => onHover?.(null)}
               onBlur={() => onHover?.(null)}
               aria-pressed={active}
-              className="group flex w-full items-center gap-4 px-5 py-5 text-left transition-colors duration-200 ease-brand hover:bg-white/[0.04]"
-              style={active ? { backgroundColor: "var(--accent-soft)" } : undefined}
+              className={`group relative flex w-full items-center gap-4 rounded-xl px-4 py-4 text-left transition-all duration-300 ease-out-expo ${
+                active
+                  ? "bg-white/[0.06]"
+                  : "hover:bg-white/[0.035]"
+              }`}
             >
-              {/* Active marker is a square, matching the brand's dot rule. */}
               <span
                 aria-hidden
-                className="h-2 w-2 shrink-0 transition-colors duration-200"
-                style={{ backgroundColor: active ? "var(--accent)" : "transparent" }}
+                className="absolute left-0 top-3 bottom-3 w-[2px] rounded-full transition-all duration-300"
+                style={{
+                  backgroundColor: active ? "var(--accent)" : "transparent",
+                  opacity: active ? 1 : 0,
+                }}
               />
+              <span className="label-quiet w-6 shrink-0 tabular-nums text-ink-muted">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <span className="min-w-0 flex-1">
                 <span
-                  className="block truncate text-[17px] leading-snug transition-colors duration-200"
-                  style={{ color: active ? "var(--accent)" : "var(--foreground)" }}
+                  className="block truncate text-[15px] font-medium leading-snug tracking-[-0.01em] transition-colors duration-200"
+                  style={{ color: active ? "var(--foreground)" : "var(--ink-secondary)" }}
                 >
                   {item.title}
                 </span>
                 {item.subtitle ? (
-                  <span className="mt-1 block truncate text-[13px] text-ink-3">
+                  <span className="mt-1 block truncate text-[12px] leading-relaxed text-ink-3">
                     {item.subtitle}
                   </span>
                 ) : null}
-                {/* The second press. Say so, or nobody finds it. */}
                 {active ? (
-                  <span className="label mt-2.5 block" style={{ color: "var(--accent)" }}>
-                    Read more →
+                  <span className="label mt-2.5 inline-flex items-center gap-1.5 text-accent">
+                    Read more <span aria-hidden>→</span>
                   </span>
                 ) : null}
               </span>
-              <span className="label-quiet shrink-0 tabular-nums">
-                {Math.round(item.strain * 100)}
-              </span>
-              <span
-                aria-hidden
-                className="shrink-0 text-ink-3 transition-transform duration-200 ease-brand group-hover:translate-x-0.5 group-hover:text-ink"
-              >
-                →
+              <span className="flex shrink-0 items-center gap-3">
+                <span className="label-quiet tabular-nums text-ink-muted">
+                  {Math.round(item.strain * 100)}
+                </span>
+                <span
+                  aria-hidden
+                  className="text-ink-muted transition-all duration-300 ease-out-expo group-hover:translate-x-0.5 group-hover:text-accent"
+                >
+                  →
+                </span>
               </span>
             </button>
           </li>

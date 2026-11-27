@@ -70,67 +70,107 @@ export default function Home() {
   }, [kind, selected]);
 
   return (
-    <main className="flex min-h-screen w-full flex-col overflow-x-hidden bg-ground text-ink lg:h-screen lg:flex-row lg:overflow-hidden">
-      {/* ---------------- Portrait ---------------- */}
-      <section className="relative flex h-[54vh] min-h-[380px] min-w-0 shrink-0 flex-col lg:h-auto lg:min-h-0 lg:flex-1">
-        {/* A wall behind the head, in the colour of whatever it is currently
-            feeling. A face on an empty ground reads as an object in a void no
-            matter how big you make it. */}
+    <main className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-ground text-ink lg:h-screen lg:flex-row lg:overflow-hidden">
+      {/* ---------------- Portrait / Stage ---------------- */}
+      <section className="relative flex h-[58vh] min-h-[420px] min-w-0 shrink-0 flex-col overflow-hidden lg:h-auto lg:min-h-0 lg:flex-1">
+        {/* Emotional atmosphere */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 z-0 opacity-[0.17] transition-colors duration-700 ease-brand"
+          className="pointer-events-none absolute inset-0 z-0 transition-colors duration-700 ease-brand"
           style={{
             color: AURAS[emotion]?.rimColor ?? "var(--accent)",
             background:
-              "radial-gradient(56% 50% at 50% 48%, currentColor 0%, transparent 72%)",
+              "radial-gradient(60% 55% at 50% 46%, color-mix(in srgb, currentColor 22%, transparent) 0%, transparent 72%)",
           }}
         />
+        {/* Cinematic vignette */}
+        <div
+          aria-hidden
+          className="stage-vignette pointer-events-none absolute inset-0 z-[1]"
+        />
+        {/* Top fade for header legibility */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-40 bg-gradient-to-b from-[#111318b3] to-transparent"
+        />
 
-        <header className="pointer-events-none relative z-20 flex items-start justify-between gap-4 px-6 pt-6 sm:px-10 lg:px-12 lg:pt-8">
-          <div>
-            <h1 className="label text-ink">{MIND_DATA.subject}</h1>
-            <p className="mt-2 text-[11px] tracking-[0.2em] text-ink-3">
-              {MIND_DATA.coordinates.join(" · ")}
+        <header className="pointer-events-none relative z-20 flex items-start justify-between gap-6 px-6 pt-6 sm:px-10 lg:px-12 lg:pt-8">
+          <div className="min-w-0">
+            <p className="label mb-3 text-accent">Mind Atlas</p>
+            <h1 className="display-title max-w-[12ch] text-[clamp(2rem,5vw,4.5rem)] text-ink">
+              {MIND_DATA.subject}
+            </h1>
+            <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-medium uppercase tracking-[0.24em] text-ink-3">
+              {MIND_DATA.coordinates.map((c, i) => (
+                <span key={c} className="flex items-center gap-3">
+                  {i > 0 ? <span aria-hidden className="h-px w-3 bg-line-strong" /> : null}
+                  <span>{c}</span>
+                </span>
+              ))}
             </p>
           </div>
           <Link
             href="/mind"
-            className="label pointer-events-auto shrink-0 rounded-[6px] border border-line px-3.5 py-2.5 text-ink-2 transition-colors duration-200 ease-brand hover:border-line-strong hover:text-ink"
+            className="label pointer-events-auto mt-1 inline-flex shrink-0 items-center gap-2 rounded-full border border-line bg-white/[0.03] px-4 py-2.5 text-ink-2 backdrop-blur-sm transition-all duration-300 ease-out-expo hover:border-line-strong hover:bg-white/[0.06] hover:text-ink"
           >
-            The mind →
+            <span>Enter the mind</span>
+            <span aria-hidden className="text-accent">→</span>
           </Link>
         </header>
 
-        {/* Notes float over the head. */}
-        <div className="pointer-events-none relative z-20 flex shrink-0 items-end justify-center px-6">
+        {/* Floating notes */}
+        <div className="pointer-events-none relative z-20 mt-2 flex shrink-0 items-end justify-center px-6">
           <CommentStream
             notes={active?.mood.notes ?? []}
             resetKey={active?.id ?? "none"}
           />
         </div>
 
-        <div className="relative min-h-0 min-w-0 flex-1">
+        <div className="relative z-[2] min-h-0 min-w-0 flex-1">
           <MindStage emotion={emotion} emphasis={open ? 0 : 1} />
         </div>
 
-        <footer className="pointer-events-none relative z-20 px-6 pb-6 pt-2 sm:px-10 lg:px-12 lg:pb-8">
-          <p className="label" style={{ color: "var(--accent)" }}>
-            {active ? active.mood.expressionLabel : "—"}
-          </p>
-          <p className="mt-2 max-w-[36rem] text-[15px] italic leading-relaxed text-ink-2">
-            {active
-              ? `“${active.mood.thought}”`
-              : "Pick something. I'll tell you how it went."}
-          </p>
+        {/* Bottom fade into footer */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] h-44 bg-gradient-to-t from-ground via-[#11131899] to-transparent"
+        />
+
+        <footer className="pointer-events-none relative z-20 px-6 pb-7 pt-2 sm:px-10 lg:px-12 lg:pb-10">
+          <div className="flex items-end justify-between gap-6">
+            <div className="min-w-0">
+              <p className="label text-accent">
+                {active ? active.mood.expressionLabel : "—"}
+              </p>
+              <p className="mt-3 max-w-[34rem] text-[clamp(1rem,1.8vw,1.35rem)] leading-[1.45] text-ink-2">
+                <span className="text-[#f3f1eee6]">
+                  {active
+                    ? `“${active.mood.thought}”`
+                    : "Pick something. I'll tell you how it went."}
+                </span>
+              </p>
+            </div>
+            {active ? (
+              <div className="hidden shrink-0 pb-1 sm:block">
+                <p className="label-quiet text-right">Current focus</p>
+                <p className="mt-2 max-w-[16rem] text-right text-sm text-ink-3">
+                  {active.title}
+                </p>
+              </div>
+            ) : null}
+          </div>
         </footer>
       </section>
 
       {/* ---------------- Index ---------------- */}
       <aside
-        className={`flex min-h-0 w-full shrink-0 flex-col border-t border-line bg-surface lg:h-full lg:border-l lg:border-t-0 ${
+        className={`relative flex min-h-0 w-full shrink-0 flex-col border-t border-line bg-[#181b21d1] backdrop-blur-xl lg:h-full lg:border-l lg:border-t-0 ${
           open && selected ? "lg:w-[32rem] xl:w-[36rem]" : "lg:w-[26rem] xl:w-[30rem]"
         }`}
       >
+        {/* Subtle top accent line */}
+        <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#d4522f66] to-transparent lg:hidden" />
+
         {open && selected ? (
           <ItemDetail
             item={selected}
@@ -141,7 +181,7 @@ export default function Home() {
           />
         ) : (
           <>
-            <nav className="flex shrink-0 border-b border-line">
+            <nav className="flex shrink-0 border-b border-line px-2 sm:px-3">
               {KINDS.map((k) => {
                 const on = k.id === kindId;
                 return (
@@ -150,28 +190,31 @@ export default function Home() {
                     type="button"
                     onClick={() => setKindId(k.id)}
                     aria-pressed={on}
-                    className="label relative flex-1 px-3 py-5 transition-colors duration-200 ease-brand"
+                    className="label relative flex-1 px-3 py-5 transition-colors duration-300 ease-out-expo"
                     style={{ color: on ? "var(--foreground)" : "var(--ink-tertiary)" }}
                   >
-                    {k.label}
+                    <span className="relative z-10">{k.label}</span>
                     <span
                       aria-hidden
-                      className="absolute inset-x-3 bottom-0 h-px transition-colors duration-200 ease-brand"
-                      style={{ backgroundColor: on ? "var(--accent)" : "transparent" }}
+                      className="absolute inset-x-4 bottom-0 h-[2px] rounded-full transition-all duration-300 ease-out-expo"
+                      style={{
+                        backgroundColor: on ? "var(--accent)" : "transparent",
+                        opacity: on ? 1 : 0,
+                      }}
                     />
                   </button>
                 );
               })}
             </nav>
 
-            <div className="flex items-baseline justify-between px-5 py-4">
+            <div className="flex items-baseline justify-between px-6 py-5">
               <span className="label-quiet">{kind.caption}</span>
-              <span className="label-quiet tabular-nums">
-                {kind.items.length} {kind.items.length === 1 ? "entry" : "entries"}
+              <span className="label-quiet tabular-nums text-ink-muted">
+                {String(kind.items.length).padStart(2, "0")}
               </span>
             </div>
 
-            <div className="min-h-0 flex-1 overflow-y-auto">
+            <div className="min-h-0 flex-1 overflow-y-auto px-2 pb-2">
               <ItemList items={kind.items} selectedId={selectedId} onSelect={select} />
             </div>
 

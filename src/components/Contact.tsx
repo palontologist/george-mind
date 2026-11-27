@@ -24,28 +24,26 @@ export default function Contact() {
   if (!links.length) return null;
 
   return (
-    <section className="shrink-0 border-t border-line px-5 py-6">
-      <span className="label" style={{ color: "var(--accent)" }}>
-        Get in touch
-      </span>
-      <ul className="mt-4">
+    <section className="shrink-0 border-t border-line px-6 py-6">
+      <span className="label text-accent">Get in touch</span>
+      <ul className="mt-4 space-y-0.5">
         {links.map((l) => (
           <li key={l.label}>
             <a
               href={l.href}
               target={l.href.startsWith("mailto:") ? undefined : "_blank"}
               rel="noreferrer noopener"
-              className="group flex items-center justify-between gap-4 py-1.5 text-[16px] text-ink-2 transition-colors duration-200 hover:text-ink"
+              className="group flex items-center justify-between gap-4 rounded-lg px-2 py-2 -mx-2 text-[14px] text-ink-2 transition-all duration-300 ease-out-expo hover:bg-white/[0.04] hover:text-ink"
             >
               <span className="flex min-w-0 items-baseline gap-2">
                 <span className="truncate">{l.label}</span>
-                {l.note ? <span className="label-quiet">{l.note}</span> : null}
+                {l.note ? <span className="label-quiet text-ink-muted">{l.note}</span> : null}
               </span>
               <span
                 aria-hidden
-                className="shrink-0 text-ink-3 transition-transform duration-200 ease-brand group-hover:translate-x-1"
+                className="shrink-0 text-ink-muted transition-all duration-300 ease-out-expo group-hover:translate-x-0.5 group-hover:text-accent"
               >
-                →
+                ↗
               </span>
             </a>
           </li>
