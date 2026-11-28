@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState as useReactState } from "react";
+import React, { Suspense, useEffect, useMemo, useRef, useState as useReactState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { KTX2Loader } from "three-stdlib";
@@ -736,6 +736,22 @@ function ProceduralMindFace({
 
 /* ------------------------------------------------------------------ */
 
+class FaceErrorBoundary extends React.Component<
+  { fallback: React.ReactNode; children: React.ReactNode },
+  { failed: boolean }
+> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  componentDidCatch(error: unknown) {
+    console.error("MindFace: GLB head failed to load, falling back to procedural.", error);
+  }
+  render() {
+    return this.state.failed ? this.props.fallback : this.props.children;
+  }
+}
+
 export default function MindFace({
   mind,
   refs,
@@ -759,15 +775,20 @@ export default function MindFace({
   still?: boolean;
 }) {
   if (modelUrl) {
+    const fallback = <ProceduralMindFace mind={mind} refs={refs} />;
     return (
-      <GLBMindFace
-        url={modelUrl}
-        mind={mind}
-        refs={refs}
-        onReport={onReport}
-        upright={upright}
-        still={still}
-      />
+      <FaceErrorBoundary fallback={fallback}>
+        <Suspense fallback={fallback}>
+          <GLBMindFace
+            url={modelUrl}
+            mind={mind}
+            refs={refs}
+            onReport={onReport}
+            upright={upright}
+            still={still}
+          />
+        </Suspense>
+      </FaceErrorBoundary>
     );
   }
   return <ProceduralMindFace mind={mind} refs={refs} />;
